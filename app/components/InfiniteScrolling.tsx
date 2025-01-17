@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { ForwardedRef, forwardRef } from 'react'
 import Image from 'next/image'
 import NestlePurelifeSVG from '@/app/assests/images/nestle-pure-png.png'
 import Nivea from '@/app/assests/images/nivea-png.png'
@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 import { addAnimation } from "./Infinite";
 import { generalSemiBold } from '../font'
 
-const InfiniteScrolling = forwardRef((props, ref) => {
+const InfiniteScrolling = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>) => {
     useEffect(() => {
       addAnimation(); // Call the animation setup when the component mounts
     }, []);

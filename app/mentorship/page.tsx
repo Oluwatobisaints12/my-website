@@ -19,13 +19,17 @@ import TypeWriterEffect from 'react-typewriter-effect';
 import Header from '../components/Header'
 
 // import GreatVidoClip  '@/public/great_video.mp4';
-
+interface scrollIntoView {
+  behavior?: "auto" | "smooth"; // Correct spelling
+  block?: "start" | "center" | "end" | "nearest";
+  inline?: "start" | "center" | "end" | "nearest";
+}
 const page = () => {
-  const aboutContact = useRef(null)
+  const aboutContact = useRef<HTMLDivElement>(null);
 
   const handleNavigateToContact =()=>{
     if(aboutContact.current) {
-      aboutContact.current.scrollIntoView({behaviour: "smooth"})
+      aboutContact.current.scrollIntoView({behavior: "smooth"})
     }
   }
 

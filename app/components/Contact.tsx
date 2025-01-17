@@ -1,13 +1,13 @@
 "use client"
 
-import React, { forwardRef } from 'react'
+import React, { ForwardedRef, forwardRef } from 'react'
 import Image from 'next/image'
 import EmailSVG from '@/app/assests/images/mail.svg'
 import PhoneSVG from '@/app/assests/images/phone.svg'
 import { generalMedium, generalSemiBold, helvetica } from '../font'
 import { useTheme } from './theme-provider';
 
-const Contact =  forwardRef((props, ref) => {
+const Contact =  forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>) => {
   const { theme } = useTheme();
   return (
     <div ref={ref} className='lg:max-w-[1256px] lg:w-full'>

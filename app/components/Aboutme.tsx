@@ -1,11 +1,11 @@
 
-import React, { forwardRef } from 'react'
+import React, { ForwardedRef, forwardRef } from 'react'
 import { generalSemiBold, helvetica } from '../font';
 import AboutmeImg from '@/app/assests/images/aboutme-image.jpg'
 import Image from 'next/image';
 import { useTheme } from './theme-provider';
 
-const Aboutme = forwardRef((props, ref)=> {
+const Aboutme = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>)=> {
     const { theme } = useTheme();
     return (
         <div ref={ref} className='flex flex-col mt-[5rem] lg:flex lg:flex-row  lg:items-center lg:justify-between lg:max-w-[1256px] lg:w-full'>

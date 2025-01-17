@@ -16,40 +16,50 @@ import { useRef } from "react";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import CutoutPapper from "./components/card/CutoutPapper";
+interface ScrollIntoViewOptions {
+  behavior?: "auto" | "smooth"; // Correct spelling
+  block?: "start" | "center" | "end" | "nearest";
+  inline?: "start" | "center" | "end" | "nearest";
+}
 
 export default function Home() {
-  const aboutRef = useRef(null)
-  const abouMeRef = useRef(null)
-  const aboutWork = useRef(null)
-  const aboutContact = useRef(null)
-  const aboutTestimonials= useRef(null)
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  const abouMeRef = useRef<HTMLDivElement>(null);
+
+  const aboutWork = useRef<HTMLDivElement>(null);
+
+  const aboutContact = useRef<HTMLDivElement>(null);
+
+  const aboutTestimonials= useRef<HTMLDivElement>(null);
+
   const handleScrollToAbout =()=> {
     if(aboutRef.current){
-    aboutRef.current.scrollIntoView({behaviour: "smooth"})
+    aboutRef.current.scrollIntoView({behavior: "smooth"})
   }}
 
   const handleAboutme =()=> {
     if(abouMeRef.current){
-      abouMeRef.current.scrollIntoView({behaviour: "smooth"})
+      abouMeRef.current.scrollIntoView({behavior: "smooth"})
 
     } 
    }
   const handleNavigateToWork =()=>{
     if(aboutWork.current){
-      aboutWork.current.scrollIntoView({behaviour: "smooth"})
+      aboutWork.current.scrollIntoView({behavior: "smooth"})
 
     }
   }
   const handleScrollToContact =()=>{
     if(aboutContact.current){
-      aboutContact.current.scrollIntoView({behaviour: "smooth"})
+      aboutContact.current.scrollIntoView({behavior: "smooth"})
 
     }
   }
   
   const handleScrollToTestimonials =()=>{
     if(aboutTestimonials.current){
-      aboutTestimonials.current.scrollIntoView({behaviour: "smooth"})
+      aboutTestimonials.current.scrollIntoView({behavior: "smooth"})
 
     }
   }
