@@ -1,0 +1,15 @@
+.swiper-custom-pagination .swiper-pagination-bullet {
+    width: 10px;  /* Slightly larger dots */
+    height: 10px;
+    background: #D0D5DD;
+    opacity: 1;
+    margin: 0 6px;
+    transition: all 0.3s ease; /* Smooth transition effect */
+    border-radius: 50%;
+  }
+  
+  .swiper-custom-pagination .swiper-pagination-bullet-active {
+    background: white;
+    transform: scale(1.2); /* Makes active dot slightly larger */
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Adds a subtle glow effect */
+  }
