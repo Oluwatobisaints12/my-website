@@ -15,7 +15,7 @@ export const generalSanBoldItalic = localFont({
   });
 
   export const generalSanLight = localFont({
-    src: "./assests/fonts/GeneralSans-ExtraLight.otf",
+    src: "./assests/fonts/GeneralSans-Extralight.otf",
     display: "swap",
     variable: "--font-general-sans",
   });
@@ -28,7 +28,7 @@ export const generalSanBoldItalic = localFont({
 
   
   export const generalSanLightItalic = localFont({
-    src: "./assests/fonts/GeneralSans-ExtraLightItalic.otf",
+    src: "./assests/fonts/GeneralSans-ExtralightItalic.otf",
     display: "swap",
     variable: "--font-general-sans",
   });
