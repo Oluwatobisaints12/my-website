@@ -34,7 +34,7 @@ const page = () => {
   }
 
   return (
-    <div className='py-[1rem] px-[1rem] lg:flex lg:flex-col'>
+    <div className='px-[1rem] lg:flex lg:flex-col'>
       <Header  handleClick={handleNavigateToContact}/>
       <div className="relative   flex flex-col mt-[1rem]">
         <video

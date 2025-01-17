@@ -18,8 +18,7 @@ const HorizontalText = ({handleClick}: any) => {
     {/* Image for large screens */}
     <Image
       src={WorkApproachImg}
-      width={1446}
-      height={296}
+    
       alt="desktop yellow background"
       className="hidden lg:block relative"
       priority

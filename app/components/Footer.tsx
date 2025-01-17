@@ -3,7 +3,7 @@ import { helvetica, vanillaText } from '../font'
 
 const Footer = () => {
   return (
-    <div className='lg:max-w-[1256px] lg:w-full lg:mt-[2.5rem]'>
+    <div className='w-full lg:max-w-[1256px] lg:w-full lg:mt-[2.5rem]'>
      <div className="border-t border-red w-full h-[10px]"></div>
 
       <div className='flex items-center justify-between lg:mt-[1.5rem]'>

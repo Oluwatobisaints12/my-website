@@ -13,7 +13,7 @@ const CutoutPapper = () => {
     <Image
       src={MobileHorizonLine}
       alt="Mobile Horizon Line displaying Great Anosike's branding"
-      className=" lg:hidden"
+      className="block md:hidden lg:hidden"
       priority
     />
 
@@ -21,7 +21,7 @@ const CutoutPapper = () => {
     <Image
       src={DesktopHorizonLine}
       alt="Mobile Horizon Line displaying Great Anosike's branding"
-      className="hidden lg:flex "
+      className="hidden md:flex lg:flex "
       priority
     />
 

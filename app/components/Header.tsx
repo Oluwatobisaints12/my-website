@@ -2,28 +2,37 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { vanillaText } from "@/app/font";
 import { ModeToggle } from "./mode-toggle";
 import { useTheme } from "./theme-provider";
 
 const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick}: any) => {
+  const router = useRouter()
+
   const pathname = usePathname();
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
 
 
   // Ensure the component is mounted before accessing theme
   useEffect(() => {
     setMounted(true);
   }, []);
-
+  
+const handleNavigation = async (path: string) => {
+  setIsLoading(true);
+  await router.push(path);
+  setIsLoading(false);
+};
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "" },
     { name: "Work", path: "/work" },
-    { name: "Testimonies", path: "/testimonies" },
+    { name: "Testimonies", path: "/testimony" },
     { name: "Gallery", path: "/gallery" },
     { name: "Mentorship", path: "/mentorship" },
     { name: "Contact", path: "/contact" },
@@ -74,6 +83,7 @@ const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick}: an
         onClick={(e) => {
           e.preventDefault(); // Prevent default behavior
           onButtonClick(); // Trigger the custom handler
+
         }}
         className="cursor-pointer bg-transparent border-none"
       >
@@ -152,6 +162,10 @@ className="cursor-pointer bg-transparent border-none"
     ) : (
       <Link href={item.path}>
        <span
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default behavior
+          handleNavigation(item.path); // Use the navigation function
+        }}
           className={`text-[1rem] no-underline transition-colors duration-200 ${
             pathname === item.path
               ? "text-[#F57F17]"

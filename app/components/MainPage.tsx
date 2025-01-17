@@ -24,7 +24,7 @@ const MainPage = ({handleClick}: any) => {
     <div className=' w-full flex flex-col justify-center items-center'>
       <div className='flex flex-col lg:flex lg:items-center lg:flex-row lg:justify-between lg:w-full lg:max-w-[1256px]'>
         <div className='lg:w-full lg:max-w-[720px]'>
-          <h2 className={` ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className} text-clamp-md leading-[48px] lg:leading-[76px]`}>
+          <h2 className={` ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
             <span className={`text-[#F57F17] text-clamp-md ${generalSemiBold.className}`}>
               <TypeWriterEffect
                 textStyle={{
@@ -32,7 +32,7 @@ const MainPage = ({handleClick}: any) => {
                   fontWeight: '600',
                   // Assuming generalSemiBold maps to a font weight
                   color: '#F57F17', // Matches text-white
-                  fontSize: 'clamp(1.6rem, 4vw, 3rem)' // Add your specific text-clamp-md-header value here
+                  fontSize: 'clamp(2.5rem, 5vw, 4rem)' // Add your specific text-clamp-md-header value here
                 }}
                 startDelay={2000}
                 cursorColor="#F57F17"
@@ -49,7 +49,7 @@ const MainPage = ({handleClick}: any) => {
 
             </span>
           </h2>
-          <span className={` ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className} text-clamp-md leading-[48px] lg:leading-[76px]`}>Master Marketing with Strategy and Precision.</span>
+          <span className={` ${theme === "light" ? 'text-black' : 'text-white'} ${generalSemiBold.className} text-clamp-md leading-[48px] lg:leading-[76px]`}>Master Marketing with Strategy and Precision.</span>
           <p className={` ${helvetica.className}     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
  text-clamp-md-para mt-[8px] lg:mt-[20px]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
           <button
