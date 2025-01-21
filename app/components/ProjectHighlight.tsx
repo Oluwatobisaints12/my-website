@@ -52,7 +52,7 @@ const ProjectHighlight = () => {
             loop={true}
             className="w-full"
           >
-            <SwiperSlide>
+            <SwiperSlide key="billboard">
               <video
                 autoPlay
                 loop
@@ -62,24 +62,24 @@ const ProjectHighlight = () => {
                 <source src="/Billboard.mp4" type="video/mp4" />
               </video>
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide key="mega-growth">
               <video
                 autoPlay
                 loop
                 muted
                 className="w-[398px] h-[266px] md:w-[400px] lg:w-[700px] lg:h-[468px] object-cover"
               >
-                <source src="/Mega Growth.mp4" type="video/mp4" />
+                <source src="/Mega_growth.MP4" type="video/mp4" />
               </video>
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide key="darling">
               <video
                 autoPlay
                 loop
                 muted
                 className="w-[398px] h-[266px] md:w-[400px] lg:w-[700px] lg:h-[468px] object-cover"
               >
-                <source src="/Darling.mp4" type="video/mp4" />
+                <source src="/Darling.MP4" type="video/mp4" />
               </video>
             </SwiperSlide>
           </Swiper>
@@ -87,13 +87,13 @@ const ProjectHighlight = () => {
         <div className="swiper-custom-pagination flex justify-center gap-2 mt-[1.25rem] color-white"></div>
       </div>
   
-      <div className="mt-[35px] lg:mt-0">
+      {/* <div className="mt-[35px] lg:mt-0">
         <Image
           src={BrandImg}
           alt="Mobile Horizon Line displaying Great Anosike's branding"
           className="w-[398px] h-[429px] md:w-[400px] lg:w-[532px] lg:h-[578px] rounded-[20px]"
         />
-      </div>
+      </div> */}
     </div>
   </div>
   

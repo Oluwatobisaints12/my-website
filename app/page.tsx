@@ -69,8 +69,8 @@ export default function Home() {
   return (
 <div>
   {/* Container for padded content */}
-  <div className="px-[1rem] flex flex-col justify-center items-center">
-    <Header 
+  <div className="px-[1rem] flex flex-col justify-center items-center overflow-hidden">
+    <Header  
       onButtonClick={handleAboutme} 
       buttonClick={handleNavigateToWork} 
       handleClick={handleScrollToContact} 
