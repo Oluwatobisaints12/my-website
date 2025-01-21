@@ -8,7 +8,7 @@ import { generalSemiBold, helvetica } from '@/app/font'
 const CutoutPapper = () => {
     const myAppRef = useRef(null);
   return (
-    <div className="positive relative mt-[5rem] w-full max-w-[1383px]">
+    <div className="positive relative mt-[5rem] flex just-center items-center w-full max-w-[1383px]">
     {/* Image */}
     <Image
       src={MobileHorizonLine}
@@ -26,8 +26,8 @@ const CutoutPapper = () => {
     />
 
     {/* Overlay Text */}
-    <div className="absolute top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center ">
-      <div ref={myAppRef} className="absolute top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center ">
+    <div className="absolute  top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center ">
+      <div ref={myAppRef} className="absolute top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center px-[1rem] lg:px-[3.5rem]">
         <h1>
           <TypeWriterEffect
             textStyle={{
@@ -52,8 +52,11 @@ const CutoutPapper = () => {
           />
         </h1>
         <p className={`text-clamp-md-text text-white  ${helvetica.className} `}>
-          Discover Great Anosike's journey, achievements, and standout projects. Stay tuned for the latest updates and insights into his professional milestones and personal growth. Dive in to learn more about Great Anosike and his inspiring path.
-        </p>
+  Discover Great Anosike's journey, achievements, and standout projects. Stay tuned for the latest updates and insights into his professional milestones and personal growth.
+  <br />
+  Dive in to learn more about Great Anosike and his inspiring path.
+</p>
+
       </div>
 
     </div>

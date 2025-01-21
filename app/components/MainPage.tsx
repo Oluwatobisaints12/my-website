@@ -49,7 +49,6 @@ const MainPage = ({handleClick}: any) => {
 
             </span>
           </h2>
-          <span className={` ${theme === "light" ? 'text-black' : 'text-white'} ${generalSemiBold.className} text-clamp-md leading-[48px] lg:leading-[76px]`}>Master Marketing with Strategy and Precision.</span>
           <p className={` ${helvetica.className}     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
  text-clamp-md-para mt-[8px] lg:mt-[20px]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
           <button

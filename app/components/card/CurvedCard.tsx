@@ -16,10 +16,10 @@ const CurvedCard = () => {
     return (
  <div className='flex flex-col  mt-[20px] lg:flex lg:flex-row lg:items-center lg:justify-between'>
   <div className='order-1 lg:order-2 flex flex-col gap-[12px] lg:max-w-[616px]  lg:w-full lg:gap-[20px] lg:flex lg:flex-col'>
-       <div className="card w-[398px] px-[0.9375rem] py-[0.59375rem]  lg:w-full lg:py-[1rem] lg:px-[24px]">
+       <div className={` ${theme === 'light' ? 'light-theme' : 'dark-theme'} card w-[398px] px-[0.9375rem] py-[0.59375rem]  lg:w-full lg:py-[1rem] lg:px-[24px]`}>
     <div className="card-content">
       <p className={`text-clamp-curvecard-text ${helvetica.className}`}>"Working with Great was an absolute game-changer for our team. His strategic insights and hands-on approach made complex projects feel achievable. Great doesn't just execute tasks; he aligns every step with the bigger picture, ensuring long-term value."</p>
-      <div className='flex items-center mt-[4px] gap-[5px] lg:mt-[8px]'>
+      <div className='flex items-center mt-[4px] gap-[15px] lg:mt-[8px]'>
        
         <div className='w-[32px] lg:w-[40px]'>
         <GroupInfoSVG />
@@ -37,10 +37,10 @@ const CurvedCard = () => {
     </div>
   </div>
 
-  <div className="card w-[398px] px-[0.9375rem] py-[0.59375rem]  lg:w-full lg:py-[1rem] lg:px-[24px]">
+  <div className={`${theme === 'light' ? 'light-theme' : 'dark-theme'} card w-[398px] px-[0.9375rem] py-[0.59375rem]  lg:w-full lg:py-[1rem] lg:px-[24px]`}>
     <div className="card-content">
       <p className={`text-clamp-curvecard-text ${helvetica.className}`}>"Great has a unique ability to turn vision into actionable results. His attention to detail, combined with his understanding of consumer behavior, helped us craft campaigns that truly resonated with our audience. He balances creativity with data-driven strategies seamlessly."</p>
-      <div className='flex items-center mt-[4px] gap-[5px]  lg:mt-[8px]'>
+      <div className='flex items-center mt-[4px] gap-[15px]  lg:mt-[8px]'>
       <div className='w-[32px] lg:w-[40px]'>
         <GroupInfo />
         </div>
@@ -56,12 +56,12 @@ const CurvedCard = () => {
     </div>
   </div>
 
-  <div className="card w-[398px] px-[0.9375rem] py-[0.59375rem] lg:w-full lg:py-[1rem] lg:px-[24px] shadow-lg hover:shadow-none transition-shadow duration-300">
+  <div className={`card ${theme === 'light' ? 'light-theme' : 'dark-theme'} w-[398px] px-[0.9375rem] py-[0.59375rem] lg:w-full lg:py-[1rem] lg:px-[24px] shadow-lg hover:shadow-none transition-shadow duration-300 `}>
   <div className="card-content">
     <p className={`text-clamp-curvecard-text ${helvetica.className}`}>
       “When I think of Great, three words come to mind: strategic, reliable, and innovative. From day one, he brought clarity to our project goals and ensured every decision was backed by research and intent. His leadership style encourages collaboration.”
     </p>
-    <div className="flex items-center mt-[4px] gap-[5px] lg:mt-[8px]">
+    <div className="flex items-center mt-[4px] gap-[20px] lg:mt-[8px]">
     <div className='w-[32px] lg:w-[40px]'>
         <GroupSVG />
         </div>
