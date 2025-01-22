@@ -16,16 +16,16 @@ import GreatAnosike from '@/app/assests/images/great_pic.jpg'
 const Slider = () => {
     const { theme } = useTheme()
     return (
-     <div className='w-full lg:flex lg:justify-center lg:items-center'>
-   <div className="relative flex flex-col mt-[2.5rem] lg:items-center w-full lg:justify-between lg:flex lg:flex-row lg:max-w-[1262px]">
-            <div className="relative  group  justify-center flex  ">
+     <div className='w-full  md:flex md:justify-center md:items-center lg:flex lg:justify-center lg:items-center'>
+   <div className="relative flex flex-col mt-[2.5rem] md:items-center w-full md:justify-between md:flex md:w-full md:flex-row md:max-w-[726px] lg:items-center w-full lg:justify-between lg:flex lg:flex-row lg:max-w-[1262px]">
+            <div className="relative  group  justify-center flex md:max-w-[309px] lg:w-full lg:max-w-[531px]">
                 <Image
                     src={GreatAnosike}
                     alt="mentorship dashboard image"
                     className=" object-cover transition-transform duration-500 group-hover:scale-105 rounded-[1.25rem]  "
                 />
             </div>
-            <div className="w-full lg:w-1/2 flex flex-col">
+            <div className="w-full md:w-[412px] lg:w-1/2 flex flex-col">
 
             
            <div className=''>
@@ -46,16 +46,16 @@ const Slider = () => {
             >
                 <SwiperSlide>
                     <div className="flex ">
-                        <h1 className={`text-clamp-slider-text ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Tailored Guidance:  <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Receive personalized advice and strategies to navigate your unique challenges and career goals.</span></h1>
+                        <h1 className={`text-[1.5rem] md:text-[1.5rem] lg:text-[2.75rem] ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Tailored Guidance:  <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Receive personalized advice and strategies to navigate your unique challenges and career goals.</span></h1>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="flex flex-col">
-                        <h1 className={`text-clamp-slider-text ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Industry Insights: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Gain insider knowledge on client relationship management, brand building, and market penetration strategies</span> </h1>          </div>
+                        <h1 className={`text-[1.5rem] md:text-[1.5rem] lg:text-[2.75rem]  ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Industry Insights: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Gain insider knowledge on client relationship management, brand building, and market penetration strategies</span> </h1>          </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="flex flex-col">
-                        <h1 className={`text-clamp-slider-text ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Practical Skills Development: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Enhance your abilities in campaign planning, project management, digital marketing, and more.</span>  </h1>
+                        <h1 className={`text-[1.5rem] md:text-[1.5rem] lg:text-[2.75rem]  ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Practical Skills Development: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Enhance your abilities in campaign planning, project management, digital marketing, and more.</span>  </h1>
                     </div>
                 </SwiperSlide>
 

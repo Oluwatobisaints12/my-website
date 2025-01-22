@@ -23,10 +23,10 @@ export default {
       }
     },
     fontSize: {
-      'clamp-md': 'clamp(2.5rem, 5vw, 4rem)',
+      'clamp-md': 'clamp(2.5rem, 4vw, 4rem)',
        'clamp-md-para': 'clamp(1rem, 1.25vw, 1.25rem)',
        'clamp-md-header': 'clamp(1.7rem, 1.25vw, 2.5rem)',
-        'clamp-md-text': 'clamp(0.875rem, 1.25vw, 1.5rem)',
+        'clamp-md-text': 'clamp(0.75rem, 1.25vw, 1.5rem)',
         'clamp-md-aboutme-text': 'clamp(1rem, 1.25vw, 1.25rem)',
         'clamp-md-aboutme-link': 'clamp(1rem, 1.25vw, 1.125rem)',
         'clamp-curvecard-text': 'clamp(0.75rem, 1.25vw, 1.125rem)',
@@ -49,11 +49,13 @@ export default {
         'clamp-mentor-header': 'clamp(1.75rem, 4vw, 4rem)',
         'clamp-mentor-text': 'clamp(1.125rem, 4vw, 1.25rem)',
         'clamp-gallery-text': 'clamp(1.25rem, 4.25vw, 3.25rem)',
+        'clamp-text': 'clamp(1.6rem, 4vw, 2.5rem)'
 
     },
     lineHeight: {
       '48px': '48px',
-      '76px': '76px'
+      '46px': '46px',
+      '30px': '30px'
     
     },
   },

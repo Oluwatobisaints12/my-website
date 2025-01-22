@@ -11,7 +11,7 @@ const MentorshipContact = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedR
   const { theme } = useTheme();
   return (
     <div ref={ref} className='lg:max-w-[600px] w-ful lg:w-full'>
-      <div className="flex flex-col mt-[5rem] lg:max-w-[893px] lg:w-full">
+      <div className="flex flex-col mt-[5rem] md:mt-0 lg:max-w-[893px] lg:w-full">
         {/* Header */}
         <h1 className={`text-clamp-header-text ${generalSemiBold.className}`}>
           Contact

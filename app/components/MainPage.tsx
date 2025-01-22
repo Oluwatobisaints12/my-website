@@ -22,9 +22,9 @@ const MainPage = ({handleClick}: any) => {
   };
   return (
     <div className=' w-full flex flex-col justify-center items-center'>
-      <div className='flex flex-col lg:flex lg:items-center lg:flex-row lg:justify-between lg:w-full lg:max-w-[1256px]'>
-        <div className='lg:w-full lg:max-w-[720px]'>
-          <h2 className={` ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
+      <div className='flex flex-col md:flex md:flex-row md:justify-between md:items-center md:max-w-[725px] md:w-full lg:flex lg:items-center lg:flex-row  lg:justify-between lg:w-full lg:max-w-[1256px]'>
+        <div className='lg:w-full lg:max-w-[720px] md:w-full md:max-w-[417px]'>
+          <h2 className={` mt-[1.25rem] ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
             <span className={`text-[#F57F17] text-clamp-md ${generalSemiBold.className}`}>
               <TypeWriterEffect
                 textStyle={{
@@ -48,9 +48,14 @@ const MainPage = ({handleClick}: any) => {
               />
 
             </span>
+           
           </h2>
+          <span className={`${theme === "light" ? 'text-black' : 'text-white'} leading-[48px] lg:leading-[72px]  text-clamp-md ${generalSemiBold.className}`}>
+            Master Marketing with Strategy and Precision.
+            </span>
+
           <p className={` ${helvetica.className}     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
- text-clamp-md-para mt-[8px] lg:mt-[20px]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
+ text-clamp-md-para mt-[8px] lg:mt-[1.25rem]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
           <button
             onClick={handleClick}
             className="px-6 py-3 bg-[#F57F17] text-white font-bold rounded-md hover:bg-yellow-800 transition-colors mt-[1.25rem] lg: mt-[2.5rem]     hover:opacity-75 transition-colors transition-opacity duration-300 "

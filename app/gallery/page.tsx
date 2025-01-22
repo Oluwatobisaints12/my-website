@@ -28,7 +28,7 @@ const page = () => {
           muted
           className="w-full h-full object-cover"
         >
-          <source src="/great-video-gallery.mp4" type="video/mp4" />
+          <source src="/great-new-gallery-video.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute bottom-0 right-[12px]  text-center ">
@@ -42,14 +42,14 @@ const page = () => {
 
       </div>
       <div className='text-center mt-[1rem] px-[1rem] lg:mt-[2.375rem]'>
-        <p className={`${generalMedium.className} text-clamp-gallery-text ${theme === "light" ? 'text-dark' : 'text-white'}`}>
+        <p className={`${generalMedium.className} text-[1.25rem] md:text-[1.875rem] lg:text-[3.175rem]  ${theme === "light" ? 'text-dark' : 'text-white'}`}>
           Explore the impactful campaigns and projects crafted by Great Chisom Anosike. From large-scale product activations to immersive brand experiences, each picture tells a story of innovation, strategy, and measurable success.
         </p>
       </div>
-    <div className='w-full lg:flex mt-[1.25rem] lg:justify-center lg:items-center lg:mt-[2.5rem]'>
-    <div className='flex flex-col gap-[1rem] px-[1rem] lg:flex lg:flex-col w-full lg:max-w-[1252px] lg:gap-[1.25rem]'>
+    <div className='w-full lg:flex mt-[1.25rem] md:mt-[1.5rem] md:w-full md:flex md:justify-center md:items-center lg:justify-center lg:items-center lg:mt-[2.5rem]'>
+    <div className='flex flex-col gap-[1rem] px-[1rem] md:flex md:flex-col md:max-w-[730px] lg:flex lg:flex-col w-full lg:max-w-[1252px] lg:gap-[1.25rem]'>
        
-       <div className='gap-[1rem] flex flex-col lg:flex lg:flex-row lg:gap-[1.25rem]'>
+       <div className='gap-[1rem] flex flex-col md:flex md:flex-row lg:flex lg:flex-row lg:gap-[1.25rem]'>
        <div className="relative  group   ">
        <Image
          src={BrandCommAwardSVG}
@@ -78,7 +78,7 @@ const page = () => {
 </div>
        </div>
 
-      <div className='gap-[1rem] flex flex-col lg:flex lg:flex-row'>
+      <div className='gap-[1rem] flex flex-col md:flex md:flex-row lg:flex lg:flex-row'>
       <div className="relative  group">
       <Image
          src={Native}
@@ -103,7 +103,7 @@ const page = () => {
        />
       </div>
       </div>
-       <div className='gap-[1rem] flex flex-col lg:flex lg:flex-row'>
+       <div className='gap-[1rem] flex flex-col md:flex md:flex-row lg:flex lg:flex-row'>
        <div className="relative  group">
        <Image
          src={Cutest}
@@ -129,8 +129,8 @@ const page = () => {
      </div>
     </div>
 
-  <div className='mt-[1.25rem] px-[1rem] lg:w-full lg:flex lg:justify-center lg:items-center'>
-  <div className='w-full lg:max-w-[1252px] object-cover transition-transform duration-500 group-hover:scale-105'>
+  <div className='mt-[1.25rem] px-[1rem] md:w-full md:flex md:justify-center md:items-center lg:w-full lg:flex lg:justify-center lg:items-center'>
+  <div className='w-full md:max-w-[730px] lg:max-w-[1252px] object-cover transition-transform duration-500 group-hover:scale-105'>
   <Footer />
   </div>
   </div>

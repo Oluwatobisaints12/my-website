@@ -10,8 +10,8 @@ import { useTheme } from './theme-provider';
 const Contact =  forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>) => {
   const { theme } = useTheme();
   return (
-    <div ref={ref} className='lg:max-w-[1256px] lg:w-full'>
-      <div className="flex flex-col mt-[5rem] lg:max-w-[893px] lg:w-full">
+    <div ref={ref} className='md:w-full md:flex md:justify-center  md:self-start lg:max-w-[1256px] lg:w-full'>
+      <div className="flex flex-col mt-[5rem] md:max-w-[725px] md:mt-0 lg:max-w-[893px] lg:w-full">
         {/* Header */}
         <h1 className={`text-clamp-header-text ${generalSemiBold.className}`}>
           Contact

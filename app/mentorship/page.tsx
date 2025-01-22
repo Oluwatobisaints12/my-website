@@ -6,7 +6,7 @@ import MentorshipImage from '@/app/assests/images/mentorship-dashboard-image.jpg
 import { generalMedium, generalSemiBold, helvetica } from '../font'
 import HorizontalMentorshipMobile from '@/app/assests/images/horizontalline-mobile-mentorship.png'
 import HorizontalMentorship from '@/app/assests/images/horizontalline-memtorship.png'
-
+import HorizonMentorship from '@/app/assests/images/great-mentor.png'
 import Slider from '../components/card/Slider'
 import GroupCard from '../components/card/GroupCard'
 import MentorshipText from '../components/card/MentorshipText'
@@ -34,8 +34,11 @@ const page = () => {
   }
 
   return (
-    <div className='px-[1rem] lg:flex lg:flex-col'>
+    <div className=' lg:flex lg:flex-col'>
+      <div className='px-[1rem]'>
       <Header  handleClick={handleNavigateToContact}/>
+      </div>
+      <div>
       <div className="relative   flex flex-col mt-[1rem]">
         <video
           autoPlay
@@ -43,10 +46,10 @@ const page = () => {
           muted
           className="w-full h-full object-cover"
         >
-          <source src="/great_video.mp4" type="video/mp4" />
+          <source src="/great-new-mentor-video.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute top-0 left-0 flex flex-col items-center w-full px-[0.75rem]  text-center ">
+        <div className="absolute top-0 left-0 flex flex-col items-center w-full  px-[0.75rem]  text-center lg:px-[7rem]">
           <h2 className={` ${generalSemiBold.className} text-white text-clamp-mentorship-title `}>
             Mentorship with Great Chisom Anosike
           </h2>
@@ -60,37 +63,23 @@ const page = () => {
         <Image
           src={HorizontalMentorshipMobile}
           alt="mentorship dashboard image"
-          className="lg:hidden"
+          className="flex md:hidden lg:hidden"
         />
 
+<Image
+          src={HorizonMentorship}
+          alt="mentorship dashboard image"
+          className="hidden md:w-full md:flex lg:hidden"
+        />
         <Image
           src={HorizontalMentorship}
           alt="mentorship dashboard image"
-          className=" hidden lg:block mt-[-3rem] w-full"
+          className=" hidden lg:block mt-[-3rem] md:w-full"
         />
         <div className='absolute top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center '>
-          <h1 className={` text-clamp-mentorship-absolute-text ${generalSemiBold.className} text-white`}>
-          <TypeWriterEffect
-    textStyle={{
-      fontFamily: generalSemiBold,
-      fontWeight: '600',
-       // Assuming generalSemiBold maps to a font weight
-      color: 'white', // Matches text-white
-      // fontSize: 'clamp(1.6rem, 4vw, 3rem)' // Add your specific text-clamp-md-header value here
-      textAlign: 'center'
-    }}
-    startDelay={2000}
-        cursorColor="white"
-        multiText={[
-          "Why Choose Mentorship with Great?",
-          "Why Choose Mentorship with Great?",
-       
-        ]}
-        multiTextDelay={1000}
-        typeSpeed={100}
-        multiTextLoop
+          <h1 className={` text-[1.25rem] md:text-[2.25rem] lg:text-[4rem] ${generalSemiBold.className} text-white`}>
+          Why Choose Mentorship with Great?
 
-  />
           
             </h1>
 
@@ -101,18 +90,19 @@ const page = () => {
     
 
       <GroupCard />
-      <div className='w-full lg:flex lg:justify-center lg:items-center'>
+      <div className='w-full md:flex md:justify-center md:items-center lg:flex lg:justify-center lg:items-center'>
       <MentorshipText />
       </div>
      
-    <div className='  w-full  lg:flex  lg:justify-center lg:items-center'>
-  <div className='lg:flex lg:flex-row  w-full lg:max-w-[1262px] lg:justify-between'>
+    <div className='  w-full md:flex  md:justify-center   lg:flex  lg:justify-center lg:items-center'>
+  <div className='md:flex md:flex-row md:mt-[17px] w-full md:max-w-[726px] md:justify-between lg:flex lg:flex-row  w-full lg:max-w-[1262px] lg:justify-between'>
   <ContactUs />
   <MentorshipContact ref={aboutContact} />
   </div>
     </div>
-      <div  className='w-full  lg:flex  lg:justify-center lg:items-center'>
+      <div  className='w-full md:flex  md:justify-center md:items-center  lg:flex  lg:justify-center lg:items-center'>
       <Footer />
+      </div>
       </div>
 
     </div>
