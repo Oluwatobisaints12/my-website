@@ -9,13 +9,14 @@ import GreatIMG from '@/app/assests/images/contact-us-img.jpg'
 import GreatWhiteIMG from '@/app/assests/images/contact-us-white-img.jpg'
 import { helvetica, helveticaBold } from '@/app/font';
 import { useTheme } from '../theme-provider';
+import GreatTestimonial from '@/app/assests/images/testimonial-image.png'
 
 const CurvedCard = () => {
   const { theme } = useTheme();
 
     return (
- <div className='flex flex-col  mt-[20px] lg:flex lg:flex-row lg:items-center lg:justify-between'>
-  <div className='order-1 lg:order-2 flex flex-col gap-[12px] lg:max-w-[616px]  lg:w-full lg:gap-[20px] lg:flex lg:flex-col'>
+ <div className='flex flex-col  mt-[20px] md:flex md:flex-row md:items-center md:justify-between lg:flex lg:flex-row lg:items-center lg:justify-between'>
+  <div className='order-1 md:order-2 lg:order-2 flex flex-col gap-[12px] lg:max-w-[616px]  lg:w-full lg:gap-[20px] lg:flex lg:flex-col'>
        <div className={` ${theme === 'light' ? 'light-theme' : 'dark-theme'} card w-[398px] px-[0.9375rem] py-[0.59375rem]  lg:w-full lg:py-[1rem] lg:px-[24px]`}>
     <div className="card-content">
       <p className={`text-clamp-curvecard-text ${helvetica.className}`}>"Working with Great was an absolute game-changer for our team. His strategic insights and hands-on approach made complex projects feel achievable. Great doesn't just execute tasks; he aligns every step with the bigger picture, ensuring long-term value."</p>
@@ -78,22 +79,14 @@ const CurvedCard = () => {
 </div>
 
 </div>
-{theme === "light" ?  <div className='mt-[2.5rem]  order-2 lg:order-1 w-[398px] lg:mt-[20px] lg:w-[616px] lg:h-[667px]'>
-  <Image 
-     src={GreatWhiteIMG}
-     alt="great image"
-   className='rounded-[20px]'
-     />
-  </div> 
-  :  <div className='mt-[2.5rem]  order-2 lg:order-1 w-[398px] lg:mt-[20px] lg:w-[616px] lg:h-[667px]'>
-  <Image 
-     src={GreatIMG}
-     alt="great image"
-   className='rounded-[20px]'
-     />
+<div className='mt-[2.5rem] md:mt-0  order-2 md:order-1 lg:order-1 w-[398px] lg:mt-[20px] lg:w-[616px] lg:h-[667px]'>
+<Image 
+src={GreatTestimonial}
+alt='testimonial image'
+
+/>
   </div>
-  }
-  
+
   </div>
     );
   };

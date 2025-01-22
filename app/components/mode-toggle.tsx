@@ -19,15 +19,16 @@ export function ModeToggle() {
 
   return (
     <div
-      className={`p-2 flex items-center justify-center rounded-[8px] w-[107px] h-[28px] lg:w-[121px] lg:h-[32px] gap-[8px] ${
+    onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+
+      className={`p-2 flex items-center justify-center cursor-pointer rounded-[8px] gap-[8px] w-[107px] h-[28px] md:w-[79px] md:h-[18px] md:text-[10px] md:p-0 md:gap-[4px] lg:w-[121px] lg:h-[32px]  ${
         resolvedTheme === "dark" ? "bg-white text-[#1C1B1B]" : "bg-[#0D0D0D] text-white"
       }`}
     >
-      <p className={`text-[0.75rem] ${generalSemiBold.className}`}>
+      <p className={`text-[0.75rem] md:text-[10px] ${generalSemiBold.className}`}>
         {resolvedTheme === "dark" ? "light mode" : "dark mode"}
       </p>
       <button 
-        onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
         aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
       >
         <div className="relative rounded-full hover:bg-gray-100 dark:hover:bg-gray-300 transition-colors">

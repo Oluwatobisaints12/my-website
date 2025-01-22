@@ -96,7 +96,7 @@ export default function Home() {
 
     </div>
 
-    <div className="px-[1rem] flex flex-col justify-center items-center">
+    <div className="px-[1rem] flex flex-col justify-center items-center md:flex md:justify-center md:items-center" >
     <Contact ref={aboutContact} />
     <Footer />
   </div>

@@ -1,12 +1,12 @@
 
-  .scroller__inner {
+  /* .scroller__inner {
     padding-block: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
   }
-  
+   */
   .scroller[data-animated="true"] {
     overflow: hidden;
     -webkit-mask: linear-gradient(

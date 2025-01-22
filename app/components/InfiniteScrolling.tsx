@@ -20,8 +20,8 @@ const InfiniteScrolling = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedR
     return (
       <div ref={ref} className=" mt-[2.5rem] lg:mt-[8rem]">
         <h1 className={`text-clamp-brand-text text-center mb-8 ${generalSemiBold.className}`}>Working With Renowned Brands</h1>
-        <div className="w-[400px] lg:w-full lg:w-[1256px] border border-white scroller" data-speed="fast">
-          <div className="tag-list scroller__inner">
+        <div className="w-[400px] md:w-[768px] lg:w-[1256px] border border-white scroller" data-speed="fast">
+          <div className="tag-list scroller__inner py-4 flex flex-wrap items-center gap-[2.5rem]  lg:gap-[4rem]">
             
           <Image
             className="w-[63px] md:w-[80px] lg:w-[108px]"
