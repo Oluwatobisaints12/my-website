@@ -80,11 +80,21 @@ const CurvedCard = () => {
 
 </div>
 <div className='mt-[2.5rem] md:mt-0  order-2 md:order-1 lg:order-1 w-[398px] lg:mt-[20px] lg:w-[616px] lg:h-[667px]'>
-<Image 
-src={GreatTestimonial}
-alt='testimonial image'
+<Image
+     src={GreatTestimonial}
+    alt='testimonial image'
+      width={1200}
+      height={800}
+      className="w-[398px] md:w-[400px] lg:w-[510px]"
+      priority={false}
+      loading="lazy"
+      quality={75}
+      sizes="(max-width: 398px) 398px, (max-width: 400px) 400px, 510px"
+      placeholder="blur"
+      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add your base64 blur image
+    />
 
-/>
+
   </div>
 
   </div>

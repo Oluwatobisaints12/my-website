@@ -49,7 +49,7 @@ const page = () => {
     <div className='w-full lg:flex mt-[1.25rem] md:mt-[1.5rem] md:w-full md:flex md:justify-center md:items-center lg:justify-center lg:items-center lg:mt-[2.5rem]'>
     <div className='flex flex-col gap-[1rem] px-[1rem] md:flex md:flex-col md:max-w-[730px] lg:flex lg:flex-col w-full lg:max-w-[1252px] lg:gap-[1.25rem]'>
        
-       <div className='gap-[1rem] flex flex-col md:flex md:flex-row lg:flex lg:flex-row lg:gap-[1.25rem]'>
+       <div className='gap-[1rem] flex flex-col justify-center items-center md:flex md:flex-row lg:flex lg:flex-row lg:gap-[1.25rem]'>
        <div className="relative  group   ">
        <Image
          src={BrandCommAwardSVG}
@@ -78,7 +78,7 @@ const page = () => {
 </div>
        </div>
 
-      <div className='gap-[1rem] flex flex-col md:flex md:flex-row lg:flex lg:flex-row'>
+      <div className='gap-[1rem] flex justify-center items-center flex-col md:flex md:flex-row lg:flex lg:flex-row'>
       <div className="relative  group">
       <Image
          src={Native}
@@ -103,7 +103,7 @@ const page = () => {
        />
       </div>
       </div>
-       <div className='gap-[1rem] flex flex-col md:flex md:flex-row lg:flex lg:flex-row'>
+       <div className='gap-[1rem] justify-center items-center flex flex-col md:flex md:flex-row lg:flex lg:flex-row'>
        <div className="relative  group">
        <Image
          src={Cutest}

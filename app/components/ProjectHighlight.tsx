@@ -16,151 +16,125 @@ import 'swiper/css/scrollbar';
 import dynamic from 'next/dynamic'
 import { useTheme } from './theme-provider'
 const ProjectHighlight = () => {
-  const {theme} = useTheme()
+  const { theme } = useTheme();
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
-const [iconVisible, setIconVisible] = useState(true)
-const billboardRef = useRef<HTMLVideoElement | null>(null);
-const megaGrowthRef = useRef<HTMLVideoElement | null>(null);
-const darlingRef = useRef<HTMLVideoElement | null>(null);
+  const [iconVisible, setIconVisible] = useState(true);
 
+  // Refs for videos
+  const billboardRef = useRef<HTMLVideoElement | null>(null);
+  const megaGrowthRef = useRef<HTMLVideoElement | null>(null);
+  const darlingRef = useRef<HTMLVideoElement | null>(null);
 
+  // Centralized video refs for easier management
+  const videoRefs = {
+    'billboard': billboardRef,
+    'mega-growth': megaGrowthRef,
+    'darling': darlingRef
+  };
 
+  // Optimized video click handler
+  const handleVideoClick = (videoKey: string) => {
+    const currentVideoRef = videoRefs[videoKey as keyof typeof videoRefs];
+    
+    if (!currentVideoRef?.current) return;
 
-  // Function to toggle video play/pause
+    // Pause all videos first
+    Object.values(videoRefs).forEach(ref => {
+      if (ref.current && ref.current !== currentVideoRef.current) {
+        ref.current.pause();
+      }
+    });
 
-  const handleVideoClick = (videoKey: string, videoRef: React.RefObject<HTMLVideoElement | null>) => { 
-    if (!videoRef.current) return;
-  
+    // Toggle current video
     if (playingVideo === videoKey) {
-      videoRef.current.pause();
+      currentVideoRef.current.pause();
       setIconVisible(true);
       setPlayingVideo(null);
     } else {
-      [billboardRef, megaGrowthRef, darlingRef].forEach(ref => ref.current?.pause());
-      videoRef.current.play();
+      currentVideoRef.current.play();
       setIconVisible(false);
       setPlayingVideo(videoKey);
     }
   };
-  
 
+  // Video configuration array for dynamic rendering
+  const videoConfigs = [
+    {
+      key: 'billboard',
+      src: '/Billboard.mp4',
+      ref: billboardRef
+    },
+    {
+      key: 'mega-growth',
+      src: '/mega_growth.MP4',
+      ref: megaGrowthRef
+    },
+    {
+      key: 'darling',
+      src: '/Darling.MP4',
+      ref: darlingRef
+    }
+  ];
 
   return (
     <div className="w-full mt-5">
-       <h1
-          className={`text-clamp-projecthighlight-text text-center ${generalSemiBold.className}`}
+      <h1 className={`text-clamp-projecthighlight-text text-center ${generalSemiBold.className}`}>
+        Project Highlight
+      </h1>
+      
+      <div className="w-full mt-5 text-center relative">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          slidesPerView={1}
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
+          pagination={{
+            clickable: true,
+            el: '.swiper-custom-pagination',
+          }}
+          loop={true}
+          className="inline-block"
+          // preloadImages={false}
+          // lazy={true}
         >
-          Project Highlight
-        </h1>
-        <div className="w-full mt-5 text-center relative">
-  <Swiper
-    modules={[Navigation, Pagination, Autoplay]}
-    slidesPerView={1}
-    autoplay={{
-      delay: 10000,
-      disableOnInteraction: false,
-    }}
-    pagination={{
-      clickable: true,
-      el: '.swiper-custom-pagination',
-    }}
-    loop={true}
-    className="inline-block"
-  >
-    <SwiperSlide key="billboard">
-      <div className="relative inline-block">
-        <video
-          ref={billboardRef}
-          onClick={() => handleVideoClick('billboard', billboardRef)}
-          loop
-          muted
-          className="w-[398px] h-[266px] md:w-[400px] lg:w-[700px] lg:h-[468px] object-cover cursor-pointer"
-        >
-          <source src="/Billboard.mp4" type="video/mp4" />
-        </video>
-        {/* Play button overlay */}
-        <div
-          className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
-          onClick={() => handleVideoClick('billboard', billboardRef)}
-        >
-          {iconVisible && (
-    <div 
-      className="absolute cursor-pointer"
-      onClick={() => handleVideoClick("billboard", billboardRef)}
-    >
-      <PlayIcon />
-    </div>
-  )}
-        
-          {/* <img src="../assests/images/play_circle_filled" alt="Play" className="w-16 h-16 opacity-80" /> */}
-        </div>
+          {videoConfigs.map(({ key, src, ref }) => (
+            <SwiperSlide key={key}>
+              <div className="relative inline-block">
+                <video
+                  ref={ref}
+                  onClick={() => handleVideoClick(key)}
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="w-[398px] h-[266px] md:w-[400px] lg:w-[700px] lg:h-[468px] object-cover cursor-pointer"
+                >
+                  <source src={src} type="video/mp4" />
+                </video>
+                
+                <div
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
+                  onClick={() => handleVideoClick(key)}
+                >
+                  {iconVisible && (
+                    <div className="absolute cursor-pointer">
+                      <PlayIcon />
+                    </div>
+                  )}
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </SwiperSlide>
-    
-    <SwiperSlide key="mega-growth">
-      <div className="relative inline-block">
-        <video
-          ref={megaGrowthRef}
-          onClick={() => handleVideoClick('mega-growth', megaGrowthRef)}
-          loop
-          muted
-          className="w-[398px] h-[266px] md:w-[400px] lg:w-[700px] lg:h-[468px] object-cover cursor-pointer"
-        >
-          <source src="/mega_growth.MP4" type="video/mp4" />
-        </video>
-        <div
-          className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
-          onClick={() => handleVideoClick('mega-growth', megaGrowthRef)}
-        >
-         {iconVisible && (
-    <div 
-      className="absolute cursor-pointer"
-      onClick={() => handleVideoClick("billboard", billboardRef)}
-    >
-      <PlayIcon />
-    </div>
-  )}
-          {/* <img src="/play-icon.svg" alt="Play" className="w-16 h-16 opacity-80" /> */}
-        </div>
-      </div>
-    </SwiperSlide>
-
-    <SwiperSlide key="darling">
-      <div className="relative inline-block">
-        <video
-          ref={darlingRef}
-          onClick={() => handleVideoClick('darling', darlingRef)}
-          loop
-          muted
-          className="w-[398px] h-[266px] md:w-[400px] lg:w-[700px] lg:h-[468px] object-cover cursor-pointer"
-        >
-          <source src="/Darling.MP4" type="video/mp4" />
-        </video>
-        <div
-          className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
-          onClick={() => handleVideoClick('darling', darlingRef)}
-        >
-          {iconVisible && (
-    <div 
-      className="absolute cursor-pointer"
-      onClick={() => handleVideoClick("billboard", billboardRef)}
-    >
-      <PlayIcon />
-    </div>
-  )}
-          {/* <img src="/play-icon.svg" alt="Play" className="w-16 h-16 opacity-80" /> */}
-        </div>
-      </div>
-    </SwiperSlide>
-  </Swiper>
-
-</div>
-
 
       <div className="swiper-custom-pagination flex justify-center gap-2 mt-[1.25rem] color-white"></div>
     </div>
   );
+};
 
-}
+export default ProjectHighlight;
 
-export default ProjectHighlight
