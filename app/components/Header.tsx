@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { vanillaText } from "@/app/font";
+import { helvetica, vanillaText } from "@/app/font";
 import { ModeToggle } from "./mode-toggle";
 import { useTheme } from "./theme-provider";
 import './Header.css'
@@ -105,7 +105,7 @@ return (
             className="cursor-pointer bg-transparent border-none"
           >
             <span
-              className={`text-[1rem] no-underline transition-colors duration-200 ${
+              className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
                 pathname === item.path
                   ? "text-[#F57F17]"
                   : theme === "dark"
@@ -123,7 +123,7 @@ return (
                 e.preventDefault();
                 handleNavigation(item.path);
               }}
-              className={`text-[1rem] no-underline transition-colors duration-200 ${
+              className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
                 pathname === item.path
                   ? "text-[#F57F17]"
                   : theme === "dark"
@@ -146,7 +146,9 @@ return (
 
       {/* Mobile Menu Slide-in */}
       <div
-  className={`fixed w-[50%] inset-y-0 right-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden
+  className={`fixed w-[50%] inset-y-0 right-0 bg-black/50 transition-all duration-300 md:hidden
+     ${theme === 'light' ? 'bg-white' : 'bg-black'}
+
     ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}`}
   onClick={toggleMobileMenu}
 >
@@ -168,12 +170,13 @@ return (
           key={item.name}
           onClick={() => handleNavItemClick(item.path)}
           className={`
-            w-full text-left py-2 px-4 rounded
+            ${helvetica.className}
+            w-full text-[1rem] text-left py-1 px-4 rounded
             ${pathname === item.path 
               ? "text-[#F57F17]"  
               : theme === "dark" 
                 ? "text-white hover:text-[#F57F17]" 
-                : "text-[#1C1B1B] hover:text-[#F57F17]"}
+                : "text-black hover:text-[#F57F17]"}
             transition-colors duration-300
           `}
         >
