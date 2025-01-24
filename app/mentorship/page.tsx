@@ -35,12 +35,12 @@ const page = () => {
   
 
   return (
-    <div className=' lg:flex lg:flex-col'>
+    <div className=' lg:flex lg:flex-col '>
       <div className='px-[1rem]'>
       <Header  handleClick={handleNavigateToContact}/>
       </div>
       <div>
-      <div className="relative   flex flex-col mt-[2rem] ">
+      <div className="relative   flex flex-col mt-[4rem] ">
       <video
     autoPlay
     loop
