@@ -67,7 +67,7 @@ export default function Home() {
   //   document.documentElement.setAttribute('data-theme', 'dark');
   // }, []);
   return (
-<div>
+<div className="mt-[2rem]">
   {/* Container for padded content */}
   <div className="px-[1rem] flex flex-col justify-center items-center overflow-hidden">
     <Header  
@@ -85,7 +85,7 @@ export default function Home() {
   </div>
 
   {/* Continue with padded content */}
-  <div className="px-[1rem] flex flex-col justify-center items-center">
+  <div className="px-[1rem] flex flex-col w-full justify-center items-center">
     <Aboutme ref={abouMeRef} />
     <InfiniteScrolling ref={aboutWork} />
     <ProjectHighlight />
@@ -96,7 +96,7 @@ export default function Home() {
 
     </div>
 
-    <div className="px-[1rem] flex flex-col justify-center items-center md:flex md:justify-center md:items-center" >
+    <div className="px-[1rem] flex flex-col justify-center items-center md:flex md:justify-center md:items-center " >
     <Contact ref={aboutContact} />
     <Footer />
   </div>

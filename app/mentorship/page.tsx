@@ -32,6 +32,7 @@ const page = () => {
       aboutContact.current.scrollIntoView({behavior: "smooth"})
     }
   }
+  
 
   return (
     <div className=' lg:flex lg:flex-col'>
@@ -39,27 +40,32 @@ const page = () => {
       <Header  handleClick={handleNavigateToContact}/>
       </div>
       <div>
-      <div className="relative   flex flex-col mt-[1rem]">
-        <video
-          autoPlay
-          loop
-          muted
-          className="w-full h-full object-cover"
-        >
-          <source src="/great-new-mentor-video.mp4" type="video/mp4" />
-        </video>
+      <div className="relative   flex flex-col mt-[2rem] ">
+      <video
+    autoPlay
+    loop
+    muted
+    className="w-full h-full object-cover mt-[1rem]"
+    poster="/video-poster.jpg"
+    preload="metadata"
+   
+  >
+    <source src="/great-new-mentor-video.mp4" type="video/mp4" />
+    <source src="/great-new-mentor-video.webm" type="video/webm" />
+    Your browser does not support the video tag.
+  </video>
 
-        <div className="absolute top-0 left-0 flex flex-col items-center w-full  px-[0.75rem]  text-center lg:px-[7rem]">
-          <h2 className={` ${generalSemiBold.className} text-white text-clamp-mentorship-title `}>
+        <div className="absolute top-0 left-0 flex flex-col items-center w-full mt-[8px]  px-[0.75rem]   text-center  lg:px-[7rem]">
+          <h2 className={` ${generalSemiBold.className} text-white mt-[8px] text-[1.25rem] md:text-[2rem] md:mt-[2.5625rem] lg:text-[4rem] lg:mt-[4rem]`}>
             Mentorship with Great Chisom Anosike
           </h2>
-          <p className={`text-clamp-mentorship-header text-white  ${generalMedium.className} `}>
+          <p className={`text-[12px] md:text-[0.75rem] lg:text-[1.25rem]  text-white md-w-full md:max-w-[675px] lg:w-full lg:max-w-[1166px]  ${generalMedium.className} `}>
             Great Chisom Anosike is passionate about sharing his knowledge and helping aspiring marketers, brand strategists, and event managers excel in their careers. With over five years of experience driving impactful campaigns and building successful brands across diverse industries, Great offers valuable insights and guidance to help you thrive in a competitive market.    </p>
         </div>
 
 
       </div>
-      <div className='position relative mt-[-2rem]'>
+      <div className='position relative mt-[-2rem] '>
         <Image
           src={HorizontalMentorshipMobile}
           alt="mentorship dashboard image"
@@ -86,7 +92,8 @@ const page = () => {
         </div>
       </div>
    
-        <Slider />
+    <div className='px-[1rem]'>
+    <Slider />
     
 
       <GroupCard />
@@ -103,6 +110,7 @@ const page = () => {
       <div  className='w-full md:flex  md:justify-center md:items-center  lg:flex  lg:justify-center lg:items-center'>
       <Footer />
       </div>
+    </div>
       </div>
 
     </div>
