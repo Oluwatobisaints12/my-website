@@ -26,7 +26,7 @@ const page = () => {
           autoPlay
           loop
           muted
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover mt-[1rem]"
           preload="metadata"
    
         >

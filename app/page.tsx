@@ -67,7 +67,7 @@ export default function Home() {
   //   document.documentElement.setAttribute('data-theme', 'dark');
   // }, []);
   return (
-<div className="mt-[2rem]">
+<div className="pb-[1rem]">
   {/* Container for padded content */}
   <div className="px-[1rem] flex flex-col justify-center items-center overflow-hidden">
     <Header  

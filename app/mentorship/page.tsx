@@ -45,7 +45,7 @@ const page = () => {
     autoPlay
     loop
     muted
-    className="w-full h-full object-cover mt-[1rem]"
+    className="w-full h-full object-cover "
     poster="/video-poster.jpg"
     preload="metadata"
    
