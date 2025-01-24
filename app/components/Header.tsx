@@ -59,8 +59,8 @@ const handleNavigation = async (path: string) => {
 };
 
 return (
-  <header className={`fixed  top-[-1px] left-0 w-full z-50 justify-between items-center  ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
-    <div className="container mx-auto  flex justify-between items-center md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
+  <header className={`fixed  top-[-1px] left-0  w-full z-50 justify-between items-center  ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
+    <div className="container mt-[2rem] mx-auto px-[1rem] flex justify-between items-center md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
       {/* Logo or Brand */}
       <div className="lg:w-[30%]">
    <h1 className={`${vanillaText.className} text-clamp-header-name`}>Great Anosike</h1>
