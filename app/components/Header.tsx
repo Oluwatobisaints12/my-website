@@ -145,42 +145,44 @@ return (
  
 
       {/* Mobile Menu Slide-in */}
-      <div 
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden
-                  ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
-                   onClick={toggleMobileMenu}
+      <div
+  className={`fixed w-[50%] inset-y-0 right-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden
+    ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}`}
+  onClick={toggleMobileMenu}
+>
+  <div className="flex flex-col h-full">
+    {/* Mobile Menu Header */}
+    <div className="flex justify-between items-center p-4 border-b">
+      <button 
+        onClick={toggleMobileMenu} 
+        className="focus:outline-none"
       >
-        <div className="flex flex-col h-full">
-          {/* Mobile Menu Header */}
-          <div className="flex justify-between items-center p-4 border-b">
-            <div className="text-2xl font-bold">Your Logo</div>
-            <button 
-              onClick={toggleMobileMenu} 
-              className="focus:outline-none"
-            >
-              <X size={24} />
-            </button>
-          </div>
+        <X size={24} />
+      </button>
+    </div>
 
-          {/* Mobile Navigation Items */}
-          <nav className="flex flex-col p-4 space-y-4">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavItemClick(item.path)}
-                className={`
-                  w-full text-left py-2 px-4 rounded
-                   ${pathname === item.path 
-                ? "text-[#F57F17]"  : theme === "dark" ? "text-white hover:text-[#F57F17]" : "text-[#1C1B1B] hover:text-[#F57F17]"}
-              transition-colors duration-300
-            `}
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
-        </div>
-      </div>
+    {/* Mobile Navigation Items */}
+    <nav className="flex flex-col p-4 space-y-4">
+      {navItems.map((item) => (
+        <button
+          key={item.name}
+          onClick={() => handleNavItemClick(item.path)}
+          className={`
+            w-full text-left py-2 px-4 rounded
+            ${pathname === item.path 
+              ? "text-[#F57F17]"  
+              : theme === "dark" 
+                ? "text-white hover:text-[#F57F17]" 
+                : "text-[#1C1B1B] hover:text-[#F57F17]"}
+            transition-colors duration-300
+          `}
+        >
+          {item.name}
+        </button>
+      ))}
+    </nav>
+  </div>
+</div>
     </div>
   </header>
 );
