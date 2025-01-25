@@ -3,7 +3,7 @@
     background-color: #212121;
     color: white;
     position: relative;
-    border-radius: 13px;
+    border-radius: 20px;
     overflow: visible;
     position: relative;
   }
@@ -17,7 +17,6 @@
     background-color: #D9D9D9;
     border-radius: 50%;
     z-index: 1;
-   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +24,7 @@
   }
 
   .light-theme {
-    border: 8px solid #f0f0f0; /* Light theme border color */
+    border: 8px solid #FFFFFF; /* Light theme border color */
   }
   
   .dark-theme {

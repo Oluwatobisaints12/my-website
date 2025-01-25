@@ -8,8 +8,8 @@ import Image from 'next/image'
 import GreatWithMilo from '@/app/assests/images/greatMilo.jpg'
 import BrandCommAwardSVG from '@/app/assests/images/BRANDCOMAWARDS.png'
 import Chairman from '@/app/assests/images/great-chilling.jpg'
-import Native from '@/app/assests/images/great-standing.jpg'
-import GreatWIthGlasses from '@/app/assests/images/great-with-glasses.jpg'
+import Native from '@/app/assests/images/IMG_9156 1.png'
+import GreatWIthGlasses from '@/app/assests/images/WhatsApp Image 2025-01-13 at 11.28.18_d3d6502d 1.png'
 import GreatAway from '@/app/assests/images/great-looksaway.png'
 import Cutest from '@/app/assests/images/great-cutest.png'
 import GreatWithLife from '@/app/assests/images/great-popping.png'
@@ -93,7 +93,7 @@ const page = () => {
             <div className="relative  group">
               <Image
                 src={Native}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-[398px] lg:w-[403px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
                 alt="email icon"
                 quality={75}
                 priority
@@ -147,7 +147,7 @@ const page = () => {
             <div className="relative  group">
               <Image
                 src={GreatSmile}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-[398px] lg:h-[500px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                 alt="email icon"
                 quality={75}
                 priority

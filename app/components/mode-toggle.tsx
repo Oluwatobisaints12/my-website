@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from './theme-provider';
-import { generalSemiBold } from "../font";
+import { generalMedium, generalSemiBold } from "../font";
 
 export function ModeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -21,12 +21,12 @@ export function ModeToggle() {
     <div
     onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
 
-      className={`p-2 flex items-center justify-center cursor-pointer rounded-[8px] gap-[8px] w-[107px] h-[28px] md:w-[79px] md:h-[18px] md:text-[10px] md:p-0 md:gap-[4px] lg:w-[121px] lg:h-[32px]  ${
+      className={`flex items-center justify-center cursor-pointer py-[6px] px-[8px] rounded-[8px] gap-[8px]  md:w-[79px] md:h-[18px] md:text-[10px] md:p-0 md:gap-[4px] lg:w-[121px] lg:h-[32px]  ${
         resolvedTheme === "dark" ? "bg-white text-[#1C1B1B]" : "bg-[#0D0D0D] text-white"
       }`}
     >
-      <p className={`text-[0.75rem] md:text-[10px] ${generalSemiBold.className}`}>
-        {resolvedTheme === "dark" ? "light mode" : "dark mode"}
+      <p className={`text-[14px] md:text-[10px] ${generalMedium.className}`}>
+        {resolvedTheme === "dark" ? "Light mode" : "Dark mode"}
       </p>
       <button 
         aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}

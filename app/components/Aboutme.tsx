@@ -4,6 +4,7 @@ import { generalSemiBold, helvetica } from '../font';
 import AboutmeImg from '@/app/assests/images/aboutme-image.jpg'
 import Image from 'next/image';
 import { useTheme } from './theme-provider';
+import './Aboutme.css'
 
 const Aboutme = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>)=> {
     const { theme } = useTheme();
@@ -15,7 +16,7 @@ const Aboutme = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDiv
  ${helvetica.className} text-clamp-md-aboutme-text md:text-[12px] lg:text-[1.25rem]`}>With a strong background in event marketing, client and stakeholder management, and strategic brand development, I excel at creating customized marketing campaigns that amplify brand visibility and drive measurable growth. My expertise spans diverse industries, including food and beverage, technology, home care, and personal care, where I have consistently delivered impactful results.</p>
             <div className='flex flex-col mt-[1.25rem]'>
                 <h1 className={`${generalSemiBold.className}  lg:text-[2rem]`}>Core Skills</h1>
-                <ul className='list-disc list-inside marker:text-[#D0D5DD] gap-[0.625rem] ] lg:mt-[20px]  grid grid-cols-1 text-[1rem] lg:text-[18px] md:text-[10px] md:grid-cols-2 lg:grid-cols-2'>
+                <ul className='list-disc list-inside marker:text-[#D0D5DD] gap-[0.625rem] ] lg:mt-[20px]  grid grid-cols-1 text-[1rem] lg:text-[1rem] md:text-[10px] md:grid-cols-2 lg:grid-cols-2'>
                     <li className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
  ${helvetica.className} `}>Client Relationship & Account Management</li>
                     <li className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}

@@ -46,7 +46,7 @@ ${generalMedium.className} text-clamp-contact-para-text `}>
           </div>
           <p
             className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className} text-clamp-contact-para-text lg:px-[28px] lg:py-[12px]`}>
-            greatanosike@gmail.com
+            messagegreatanosike@gmail.com
           </p>
         </div>
 

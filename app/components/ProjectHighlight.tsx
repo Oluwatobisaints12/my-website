@@ -78,7 +78,7 @@ const ProjectHighlight = () => {
 
   return (
     <div className="w-full mt-5">
-      <h1 className={`text-clamp-projecthighlight-text text-center ${generalSemiBold.className}`}>
+      <h1 className={`text-clamp-projecthighlight-text pl-[8px] ${generalSemiBold.className}`}>
         Project Highlight
       </h1>
       

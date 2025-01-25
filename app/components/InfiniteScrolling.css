@@ -18,6 +18,17 @@
     );
     mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
   }
+  .scroller__inner{
+    
+  }
+  .light-theme{
+    border: 1px solid black;
+  }
+
+  .dark-theme{
+    border: 1px solid white;
+  }
+
   
   .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
@@ -54,6 +65,7 @@
     margin: 0;
     padding-inline: 0;
     list-style: none;
+
   }
   
   .tag-list li {
