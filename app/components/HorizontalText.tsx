@@ -33,9 +33,9 @@ const HorizontalText = ({handleClick}: any) => {
     />
   
     {/* Overlay content */}
-    <div className="absolute top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center">
+    <div className="absolute top-0 left-0 flex flex-col items-center mt-[10px] justify-center h-full w-full text-center">
       <h1
-        className={`${generalSemiBold.className} text-[1.25rem] text-white md:text-[2rem] lg:text-[4.375rem]`}>
+        className={`${generalSemiBold.className} text-[2.5rem] text-white md:text-[2rem] lg:text-[4.375rem]`}>
         Work Approach
       </h1>
       <p className={`${helvetica.className}  text-white text-[1.25rem] md:text-[1.75rem] lg:text-[2.75rem]`}>
