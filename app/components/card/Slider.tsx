@@ -16,7 +16,7 @@ import GreatAnosike from '@/app/assests/images/great_pic.jpg'
 const Slider = () => {
     const { theme } = useTheme()
     return (
-     <div className='w-full  md:flex md:justify-center md:items-center lg:flex lg:justify-center lg:items-center'>
+     <div className='w-full  md:flex md:justify-center md:items-center lg:flex lg:justify-center lg:items-center' data-aos="zoom-out" data-aos-anchor-placement="top-center">
    <div className="relative flex flex-col mt-[2.5rem] md:items-center w-full md:justify-between md:flex md:w-full md:flex-row md:max-w-[726px] lg:items-center w-full lg:justify-between lg:flex lg:flex-row lg:max-w-[1262px]">
             <div className="relative  group  justify-center flex md:max-w-[309px] lg:w-full lg:max-w-[531px]">
                 <Image

@@ -7,7 +7,7 @@ import HorizonTab from '@/app/assests/images/horizontal-tab-view.png'
 
 const HorizontalText = ({handleClick}: any) => {
   return (
-    <div className="mt-[5rem] relative w-full max-w-[1383px]">
+    <div className="mt-[5rem] relative w-full max-w-[1383px]" data-aos="fade-down" data-aos-anchor-placement="top-center">
     {/* Image for mobile view */}
     <Image
       src={HorizontalImage}

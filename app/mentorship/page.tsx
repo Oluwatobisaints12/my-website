@@ -56,7 +56,7 @@ const page = () => {
   </video>
 
         <div className="absolute top-0 left-0 flex flex-col items-center w-full mt-[8px]  px-[0.75rem]   text-center  lg:px-[7rem]">
-          <h2 className={` ${generalSemiBold.className} text-white mt-[8px] text-[1.25rem] md:text-[2rem] md:mt-[2.5625rem] lg:text-[4rem] lg:mt-[4rem]`}>
+          <h2 className={` ${generalSemiBold.className} text-white mt-[8px] text-[1.25rem] md:text-[2rem] md:mt-[2.5625rem] lg:text-[3.5rem] lg:mt-[4rem]`}>
             Mentorship with Great Chisom Anosike
           </h2>
           <p className={`text-[12px] md:text-[0.75rem] lg:text-[1.25rem]  text-white md-w-full md:max-w-[675px] lg:w-full lg:max-w-[1166px]  ${generalMedium.className} `}>

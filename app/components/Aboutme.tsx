@@ -10,7 +10,7 @@ const Aboutme = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDiv
     const { theme } = useTheme();
     return (
         <div ref={ref} className='flex flex-col mt-[5rem] md:flex md:flex-row md:w-full md:justify-between md:max-w-[725px] md:items-center lg:flex lg:flex-row  lg:items-center lg:justify-between lg:max-w-[1256px] lg:w-full'>
-        <div className='w-full order-1 md:order-2 lg:order-2 md:w-full md:max-w-[400px] lg:max-w-[692px]'>
+        <div className='w-full order-1 md:order-2 lg:order-2 md:w-full md:max-w-[400px] lg:max-w-[692px]'  data-aos="fade-down" data-aos-anchor-placement="top-center" >
         <h1 className={`${generalSemiBold.className} text-clamp-aboutme-text text-[1rem] text-[2.5rem] lg:text-[4rem]`}>About Me</h1>
             <p className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
  ${helvetica.className} text-clamp-md-aboutme-text md:text-[12px] lg:text-[1.25rem]`}>With a strong background in event marketing, client and stakeholder management, and strategic brand development, I excel at creating customized marketing campaigns that amplify brand visibility and drive measurable growth. My expertise spans diverse industries, including food and beverage, technology, home care, and personal care, where I have consistently delivered impactful results.</p>
@@ -34,7 +34,7 @@ const Aboutme = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDiv
                 </ul>
             </div>
         </div>
-            <div className='order-2 md:order-1 lg:order-1 mt-[2.5rem] md:mt-0 lg:order-1'>
+            <div className='order-2 md:order-1 lg:order-1 mt-[2.5rem] md:mt-0 lg:order-1'  data-aos="fade-up" data-aos-anchor-placement="top-center">
 
                 <Image
                     src={AboutmeImg}

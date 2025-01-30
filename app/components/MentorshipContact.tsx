@@ -10,8 +10,8 @@ import { useTheme } from './theme-provider';
 const MentorshipContact = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>) => {
   const { theme } = useTheme();
   return (
-    <div ref={ref} className='lg:max-w-[600px] w-ful lg:w-full'>
-      <div className="flex flex-col mt-[5rem] md:mt-0 lg:max-w-[893px] lg:w-full">
+    <div ref={ref} className='lg:max-w-[600px] w-ful lg:w-full' data-aos="flip-right" data-aos-anchor-placement="top-center">
+      <div className="flex flex-col mt-[5rem] md:mt-0 lg:max-w-[893px] lg:w-full" data-aos="flip-right" >
         {/* Header */}
         <h1 className={`text-clamp-header-text ${generalSemiBold.className}`}>
           Contact
@@ -27,12 +27,14 @@ const MentorshipContact = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedR
             <p
               className={`    ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
 
-${generalMedium.className} text-clamp-contact-para-text  `}>
+${generalMedium.className}    text-[1rem] md:text-[1rem]
+ lg:text-[1.75rem]  `}>
               Email
             </p>
           </div>
           <p
-            className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className} text-clamp-contact-para-text lg:px-[28px] lg:py-[12px] lg:ml-[2.5rem]`}>
+            className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
+ lg:text-[1.75rem] lg:px-[28px] lg:py-[12px] lg:ml-[2.5rem]`}>
             messagegreatanosike@gmail.com
           </p>
         </div>
@@ -46,12 +48,14 @@ ${generalMedium.className} text-clamp-contact-para-text  `}>
             <p
               className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
 
-${generalMedium.className} text-clamp-contact-para-text `}>
+${generalMedium.className}    text-[1rem] md:text-[1rem]
+ lg:text-[1.75rem] `}>
               Phone
             </p>
           </div>
           <p
-            className={`text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className} text-clamp-contact-para-text lg:px-[28px] lg:py-[12px] lg:ml-[2.5rem]`}>
+            className={`text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
+ lg:text-[1.75rem] lg:px-[28px] lg:py-[12px] lg:ml-[2.5rem]`}>
             +234 813 663 4633
           </p>
         </div>
