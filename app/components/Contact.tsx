@@ -1,16 +1,25 @@
 "use client"
 
-import React, { ForwardedRef, forwardRef } from 'react'
+import React, { ForwardedRef, forwardRef, useEffect } from 'react'
 import Image from 'next/image'
 import EmailSVG from '@/app/assests/images/mail.svg'
 import PhoneSVG from '@/app/assests/images/phone.svg'
 import { generalMedium, generalSemiBold, helvetica } from '../font'
 import { useTheme } from './theme-provider';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Contact =  forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>) => {
   const { theme } = useTheme();
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Animation duration in ms
+      once: true, // Ensures animation happens only once
+    });
+  }, []);
+
   return (
-    <div ref={ref} className='  lg:max-w-[1256px] lg:w-full'  data-aos="flip-down" data-aos-anchor-placement="top-center">
+    <div ref={ref} className='  lg:max-w-[1256px] lg:w-full' data-aos="zoom-in-up">
       <div className="flex flex-col mt-[5rem] md:max-w-[725px] md:mt-0 lg:max-w-[893px] lg:w-full">
         {/* Header */}
         <h1 className={`text-clamp-header-text ${generalSemiBold.className}`}>

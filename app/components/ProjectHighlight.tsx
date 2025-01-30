@@ -79,11 +79,11 @@ const ProjectHighlight = () => {
 
   return (
     <div className="w-full mt-5">
-      <h1 className={`text-clamp-projecthighlight-text pl-[8px] md:text-center lg:text-center ${generalSemiBold.className}`}  data-aos="zoom-in" data-aos-anchor-placement="top-center">
+      <h1 className={`text-clamp-projecthighlight-text pl-[8px] md:text-center lg:text-center ${generalSemiBold.className}`}  >
         Project Highlight
       </h1>
       
-      <div className="w-full mt-5 text-center relative" data-aos="flip-center" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="2000">
+      <div className="w-full mt-5 text-center relative" >
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
