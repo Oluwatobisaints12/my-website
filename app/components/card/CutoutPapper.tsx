@@ -11,13 +11,16 @@ import 'aos/dist/aos.css'
 
 const CutoutPapper = () => {
 
-  useEffect(()=>{
-    Aos.init({duration: 3000})
-      }, [])
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Animation duration in ms
+      once: true, // Ensures animation happens only once
+    });
+  }, []);
 
     const myAppRef = useRef(null);
   return (
-    <div className="positive relative mt-[5rem] flex just-center items-center w-full max-w-[1383px]" data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+    <div className="positive relative mt-[5rem] flex just-center items-center w-full max-w-[1383px]" data-aos="fade-zoom-in" >
     {/* Image */}
     <Image
       src={MobileHorizonLine}

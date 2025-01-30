@@ -2,12 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { helvetica, vanillaText } from "@/app/font";
 import { ModeToggle } from "./mode-toggle";
 import { useTheme } from "./theme-provider";
 import './Header.css'
 import { Menu, X } from "lucide-react";
+import Loading from '@/app/assests/images/loading.gif'
+
 
 
 const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick}: any) => {
@@ -27,9 +30,13 @@ const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick}: an
   }, []);
   
 const handleNavigation = async (path: string) => {
+try {
   setIsLoading(true);
-  await router.push(path);
-  setIsLoading(false);
+  router.push(path);
+   setIsLoading(false);
+} catch(error){
+  console.log('Error while navigating ')
+}
 };
   const navItems = [
     { name: "Home", path: "/" },
@@ -59,10 +66,11 @@ const handleNavigation = async (path: string) => {
 };
 
 return (
-  <header className={`fixed  top-[-1px] left-0  w-full z-50 justify-between   ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
-    <div className="container py-[1rem] mx-auto px-[1rem] flex justify-between items-center md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
+  <header className={`fixed  top-[-1px] left-0  w-full z-50 flex justify-center   ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
+ 
+    <div className=" py-[1rem] w-full px-[1rem]  flex justify-between items-center md:px-0 lg:px-0 md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
       {/* Logo or Brand */}
-      <div className="lg:w-[30%]">
+      <div className="mr-auto  lg:mr-0">
    <h1 className={`${vanillaText.className} text-clamp-header-name`}>Great Anosike</h1>
 
       </div>
@@ -80,113 +88,145 @@ return (
         </button>
  
       </div>
-
+   
 
       {/* Desktop Navigation */}
-  
-      <nav className="hidden md:flex md:w-full md:max-w-[484px] md:justify-between lg:justify-between lg:w-full lg:max-w-[665px]">
-  {navItems.map((item) => {
-    const isSpecialItem = ["About", "Work", "Contact", "Testimonial"].includes(item.name);
+      <nav className="relative flex">
+      {/* Mobile Menu Overlay - only visible on small screens */}
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden
+        ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        onClick={toggleMobileMenu}
+      />
 
-    return (
-      <div key={item.name}>
-        {isSpecialItem ? (
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              // You can call a single handler here if needed
-              toggleMobileMenu();
-              // Add any specific logic for each item if necessary
-              if (item.name === "About") onButtonClick();
-              else if (item.name === "Work") buttonClick();
-              else if (item.name === "Contact") handleClick();
-              else if (item.name === "Testimonial") handleButtonClick();
-            }}
-            className="cursor-pointer bg-transparent border-none"
-          >
-            <span
-              className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
-                pathname === item.path
-                  ? "text-[#F57F17]"
-                  : theme === "dark"
-                  ? "text-white hover:text-[#F57F17]"
-                  : "text-[#1C1B1B] hover:text-[#F57F17]"
-              }`}
-            >
-              {item.name}
-            </span>
-          </button>
-        ) : (
-          <Link href={item.path}>
-            <span
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigation(item.path);
-              }}
-              className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
-                pathname === item.path
-                  ? "text-[#F57F17]"
-                  : theme === "dark"
-                  ? "text-white hover:text-[#F57F17]"
-                  : "text-[#1C1B1B] hover:text-[#F57F17]"
-              }`}
-            >
-              {item.name}
-            </span>
-          </Link>
-        )}
-      </div>
-    );
-  })}
-</nav>
+      {/* Navigation List */}
+      <ul
+        className={`fixed md:relative right-0  h-full md:p-0 w-[250px] md:w-full md:max-w-[404px] p-6 shadow-md md:shadow-none 
+          transform transition-all duration-300 ease-in-out md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex md:items-center md:gap-[1rem] lg:gap-8
+          ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}
+          ${theme === 'light' ? 'bg-white' : 'bg-black'}
+          md:bg-transparent
+        `}
+      >
+        {navItems.map((item) => (
+          <li key={item.name} className="md:flex py-2">
+            {item.name === "About" ? (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  onButtonClick();
+                  toggleMobileMenu();
+                }}
+                className="cursor-pointer bg-transparent border-none"
+              >
+                <span
+                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                    pathname === item.path
+                      ? "text-[#F57F17]"
+                      : theme === "dark"
+                      ? "text-white hover:text-[#F57F17]"
+                      : "text-[#1C1B1B] hover:text-[#F57F17]"
+                  }`}
+                >
+                  {item.name}
+                </span>
+              </button>
+            ) : item.name === "Work" ? (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  buttonClick();
+                  toggleMobileMenu();
+                }}
+                className="cursor-pointer bg-transparent border-none"
+              >
+                <span
+                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                    pathname === item.path
+                      ? "text-[#F57F17]"
+                      : theme === "dark"
+                      ? "text-white hover:text-[#F57F17]"
+                      : "text-[#1C1B1B] hover:text-[#F57F17]"
+                  }`}
+                >
+                  {item.name}
+                </span>
+              </button>
+            ) : item.name === 'Contact' ? (
+              <button 
+                onClick={(e)=> {
+                  e.preventDefault();
+                  handleClick();
+                  toggleMobileMenu();
+                }}
+                className="cursor-pointer bg-transparent border-none"
+              >
+                <span
+                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                    pathname === item.path
+                      ? "text-[#F57F17]"
+                      : theme === "dark"
+                      ? "text-white hover:text-[#F57F17]"
+                      : "text-[#1C1B1B] hover:text-[#F57F17]"
+                  }`}
+                >
+                  {item.name}
+                </span>
+              </button>
+            ) : item.name === 'Testimonial' ? (
+              <button 
+                onClick={(e)=> {
+                  e.preventDefault();
+                  handleButtonClick();
+                  toggleMobileMenu();
+                }}
+                className="cursor-pointer bg-transparent border-none"
+              >
+                <span
+                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                    pathname === item.path
+                      ? "text-[#F57F17]"
+                      : theme === "dark"
+                      ? "text-white hover:text-[#F57F17]"
+                      : "text-[#1C1B1B] hover:text-[#F57F17]"
+                  }`}
+                >
+                  {item.name}
+                </span>
+              </button>
+            ) : (
+              <Link href={item.path}>
+                <span
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                  }}
+                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                    pathname === item.path
+                      ? "text-[#F57F17]"
+                      : theme === "dark"
+                      ? "text-white hover:text-[#F57F17]"
+                      : "text-[#1C1B1B] hover:text-[#F57F17]"
+                  }`}
+                >
+                  {item.name}
+                </span>
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+    
       <div className="hidden md:flex lg:flex  ">
  <ModeToggle />
  </div>
  
 
       {/* Mobile Menu Slide-in */}
-      <div
-  className={`fixed w-[50%] inset-y-0 right-0 bg-black/50 transition-all duration-300 md:hidden
-     ${theme === 'light' ? 'bg-white' : 'bg-black'}
-
-    ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}`}
-  onClick={toggleMobileMenu}
->
-  <div className="flex flex-col h-full">
-    {/* Mobile Menu Header */}
-    <div className="flex justify-between items-center p-4 border-b">
-      <button 
-        onClick={toggleMobileMenu} 
-        className="focus:outline-none"
-      >
-        <X size={24} />
-      </button>
+ 
     </div>
-
-    {/* Mobile Navigation Items */}
-    <nav className="flex flex-col p-4 space-y-4">
-      {navItems.map((item) => (
-        <button
-          key={item.name}
-          onClick={() => handleNavItemClick(item.path)}
-          className={`
-            ${helvetica.className}
-            w-full text-[1rem] text-left py-1 px-4 rounded
-            ${pathname === item.path 
-              ? "text-[#F57F17]"  
-              : theme === "dark" 
-                ? "text-white hover:text-[#F57F17]" 
-                : "text-black hover:text-[#F57F17]"}
-            transition-colors duration-300
-          `}
-        >
-          {item.name}
-        </button>
-      ))}
-    </nav>
-  </div>
-</div>
-    </div>
+   
   </header>
 );
 //     // Add a new wrapper div to handle the overall layout
@@ -204,132 +244,7 @@ return (
  
  
 
-//     <nav className="relative flex">
-//       {/* Mobile Menu Overlay - only visible on small screens */}
-//       <div
-//         className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden
-//         ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
-//         onClick={toggleMobileMenu}
-//       />
-
-//       {/* Navigation List */}
-//       <ul
-//         className={`fixed md:relative right-0 top-0  pt-[5rem] md:p-0 w-[250px] md:w-full md:max-w-[404px] p-6 shadow-md md:shadow-none 
-//           transform transition-all duration-300 ease-in-out md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex md:items-center md:gap-[1rem] lg:gap-8
-//           ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}
-//           ${theme === 'light' ? 'bg-white' : 'bg-black'}
-//           md:bg-transparent
-//         `}
-//       >
-//         {navItems.map((item) => (
-//           <li key={item.name} className="md:flex ">
-//             {item.name === "About" ? (
-//               <button
-//                 onClick={(e) => {
-//                   e.preventDefault();
-//                   onButtonClick();
-//                   toggleMobileMenu();
-//                 }}
-//                 className="cursor-pointer bg-transparent border-none"
-//               >
-//                 <span
-//                   className={`text-[1rem] no-underline transition-colors duration-200 ${
-//                     pathname === item.path
-//                       ? "text-[#F57F17]"
-//                       : theme === "dark"
-//                       ? "text-white hover:text-[#F57F17]"
-//                       : "text-[#1C1B1B] hover:text-[#F57F17]"
-//                   }`}
-//                 >
-//                   {item.name}
-//                 </span>
-//               </button>
-//             ) : item.name === "Work" ? (
-//               <button
-//                 onClick={(e) => {
-//                   e.preventDefault();
-//                   buttonClick();
-//                   toggleMobileMenu();
-//                 }}
-//                 className="cursor-pointer bg-transparent border-none"
-//               >
-//                 <span
-//                   className={`text-[1rem] no-underline transition-colors duration-200 ${
-//                     pathname === item.path
-//                       ? "text-[#F57F17]"
-//                       : theme === "dark"
-//                       ? "text-white hover:text-[#F57F17]"
-//                       : "text-[#1C1B1B] hover:text-[#F57F17]"
-//                   }`}
-//                 >
-//                   {item.name}
-//                 </span>
-//               </button>
-//             ) : item.name === 'Contact' ? (
-//               <button 
-//                 onClick={(e)=> {
-//                   e.preventDefault();
-//                   handleClick();
-//                   toggleMobileMenu();
-//                 }}
-//                 className="cursor-pointer bg-transparent border-none"
-//               >
-//                 <span
-//                   className={`text-[1rem] no-underline transition-colors duration-200 ${
-//                     pathname === item.path
-//                       ? "text-[#F57F17]"
-//                       : theme === "dark"
-//                       ? "text-white hover:text-[#F57F17]"
-//                       : "text-[#1C1B1B] hover:text-[#F57F17]"
-//                   }`}
-//                 >
-//                   {item.name}
-//                 </span>
-//               </button>
-//             ) : item.name === 'Testimonial' ? (
-//               <button 
-//                 onClick={(e)=> {
-//                   e.preventDefault();
-//                   handleButtonClick();
-//                   toggleMobileMenu();
-//                 }}
-//                 className="cursor-pointer bg-transparent border-none"
-//               >
-//                 <span
-//                   className={`text-[1rem] no-underline transition-colors duration-200 ${
-//                     pathname === item.path
-//                       ? "text-[#F57F17]"
-//                       : theme === "dark"
-//                       ? "text-white hover:text-[#F57F17]"
-//                       : "text-[#1C1B1B] hover:text-[#F57F17]"
-//                   }`}
-//                 >
-//                   {item.name}
-//                 </span>
-//               </button>
-//             ) : (
-//               <Link href={item.path}>
-//                 <span
-//                   onClick={(e) => {
-//                     e.preventDefault();
-//                     handleNavigation(item.path);
-//                   }}
-//                   className={`text-[1rem] no-underline transition-colors duration-200 ${
-//                     pathname === item.path
-//                       ? "text-[#F57F17]"
-//                       : theme === "dark"
-//                       ? "text-white hover:text-[#F57F17]"
-//                       : "text-[#1C1B1B] hover:text-[#F57F17]"
-//                   }`}
-//                 >
-//                   {item.name}
-//                 </span>
-//               </Link>
-//             )}
-//           </li>
-//         ))}
-//       </ul>
-//     </nav>
+  
 
 //     <div className="hidden md:flex md:items-center lg:flex lg:ml-[2rem]">
 //     <ModeToggle  />

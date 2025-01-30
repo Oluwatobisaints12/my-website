@@ -10,8 +10,8 @@ import { useTheme } from './theme-provider';
 const MentorshipContact = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>) => {
   const { theme } = useTheme();
   return (
-    <div ref={ref} className='lg:max-w-[600px] w-ful lg:w-full' data-aos="flip-right" data-aos-anchor-placement="top-center">
-      <div className="flex flex-col mt-[5rem] md:mt-0 lg:max-w-[893px] lg:w-full" data-aos="flip-right" >
+    <div ref={ref} className='lg:max-w-[600px] w-ful lg:w-full' >
+      <div className="flex flex-col mt-[5rem] md:mt-0 lg:max-w-[893px] lg:w-full" >
         {/* Header */}
         <h1 className={`text-clamp-header-text ${generalSemiBold.className}`}>
           Contact

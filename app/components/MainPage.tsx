@@ -13,10 +13,12 @@ import 'aos/dist/aos.css'
 
 const MainPage = ({handleClick}: any) => {
 
-  useEffect(()=>{
-Aos.init({duration: 3000})
-  }, [])
-
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Animation duration in ms
+      once: true, // Ensures animation happens only once
+    });
+  }, []);
   const myAppRef = useRef(null);
 
   const { theme } = useTheme();

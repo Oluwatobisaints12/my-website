@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./CurvedCard.css"
 import Image from 'next/image';
 import ArrowOutwardSVG from '@/app/assests/images/arrow_outward.svg'
@@ -10,13 +10,21 @@ import GreatWhiteIMG from '@/app/assests/images/contact-us-white-img.jpg'
 import { helvetica, helveticaBold } from '@/app/font';
 import { useTheme } from '../theme-provider';
 import GreatTestimonial from '@/app/assests/images/testimonial-image.png'
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const CurvedCard = () => {
   const { theme } = useTheme();
+  useEffect(() => {
+    Aos.init({
+      duration: 1000, // Animation duration in ms
+      once: true, // Ensures animation happens only once
+    });
+  }, []);
 
     return (
  <div className='flex flex-col  mt-[20px]  md:flex md:flex-row md:items-center md:justify-between lg:flex  lg:flex-row lg:items-center lg:justify-between'>
-  <div className='order-1 flex flex-col gap-[12px]  md:order-2 md:gap-[5px]  lg:order-2  lg:max-w-[616px]  lg:w-full  lg:flex lg:flex-col' data-aos="slide-left" data-aos-anchor-placement="top-center">
+  <div className='order-1 flex flex-col gap-[12px]  md:order-2 md:gap-[5px]  lg:order-2  lg:max-w-[616px]  lg:w-full  lg:flex lg:flex-col' data-aos="fade-down" >
        <div className={` ${theme === 'light' ? 'light-theme' : 'dark-theme'} card rounded-[1.25rem] w-[398px] md:px-[13px] md:py-[7px] px-[0.9375rem] py-[0.59375rem]  lg:w-full lg:py-[1rem] lg:px-[24px]`}>
     <div className="card-content">
       <p className={` text-[12px]  md:text-[11px] lg:text-[1.125rem]  ${helvetica.className}`}>"Working with Great was an absolute game-changer for our team. His strategic insights and hands-on approach made complex projects feel achievable. Great doesn't just execute tasks; he aligns every step with the bigger picture, ensuring long-term value."</p>
@@ -79,7 +87,7 @@ const CurvedCard = () => {
 </div>
 
 </div>
-<div className='mt-[2.5rem] w-[398px] order-2  md:mt-0  md:order-1 lg:order-1 flex items-center justify-center lg:w-[616px] lg:h-[667px]' data-aos="fade-up" data-aos-anchor-placement="top-center">
+<div className='mt-[2.5rem] w-[398px] order-2  md:mt-0  md:order-1 lg:order-1 flex items-center justify-center lg:w-[616px] lg:h-[667px]' data-aos="fade-up" >
 <Image
      src={GreatTestimonial}
     alt='testimonial image'
