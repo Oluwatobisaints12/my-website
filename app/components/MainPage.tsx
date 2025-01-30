@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Image from "next/image";
 import DashboardImage from '@/app/assests/images/dashboard-image.png'
 import MobileHorizonLine from '@/app/assests/images/vector-mobile.png'
@@ -7,9 +7,16 @@ import TypeWriterEffect from 'react-typewriter-effect';
 import { generalSemiBold, helvetica } from '../font'
 import { useTheme } from './theme-provider';
 import InfiniteScrolling from './InfiniteScrolling';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 
 const MainPage = ({handleClick}: any) => {
+
+  useEffect(()=>{
+Aos.init({duration: 3000})
+  }, [])
+
   const myAppRef = useRef(null);
 
   const { theme } = useTheme();
@@ -22,8 +29,8 @@ const MainPage = ({handleClick}: any) => {
   };
   return (
     <div className=' w-full flex flex-col justify-center  mt-[2.25rem] md:mt-[5rem]   md:flex md:justify-center md:items-center  lg:items-center lg:mt-[3rem] '>
-      <div className='flex flex-col md:flex md:flex-row md:items-center md:justify-between  md:mt-[2rem] md:max-w-[725px] md:w-full lg:flex lg:items-center lg:mt-[2rem] lg:flex-row  lg:justify-between lg:w-full lg:max-w-[1256px]'>
-        <div className=' md:w-full md:max-w-[417px] lg:w-full lg:max-w-[720px]'>
+      <div className='flex flex-col md:flex md:flex-row md:items-center md:justify-between  md:mt-[2rem] md:max-w-[725px] md:w-full lg:flex lg:items-center lg:mt-[2rem] lg:flex-row  lg:justify-between lg:w-full lg:max-w-[1256px] '>
+        <div className=' md:w-full md:max-w-[417px] lg:w-full lg:max-w-[720px]'  data-aos="fade-right">
           <h2 className={` mt-[1.25rem] ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
             <span className={`text-[#F57F17] text-clamp-md ${generalSemiBold.className}`}>
               <TypeWriterEffect
@@ -64,7 +71,7 @@ const MainPage = ({handleClick}: any) => {
           </button>
         </div>
 
-        <div className='mt-[1.75rem]'>
+        <div className='mt-[1.75rem]'  data-aos="flip-left">
           <Image
             src={DashboardImage}
             alt="Description"

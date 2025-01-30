@@ -8,7 +8,8 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import  PlayIcon  from '@/app/assests/images/play_circle_filled.svg'
 
 import './ProjectHighlight.css'
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -78,11 +79,11 @@ const ProjectHighlight = () => {
 
   return (
     <div className="w-full mt-5">
-      <h1 className={`text-clamp-projecthighlight-text pl-[8px] md:text-center lg:text-center ${generalSemiBold.className}`}>
+      <h1 className={`text-clamp-projecthighlight-text pl-[8px] md:text-center lg:text-center ${generalSemiBold.className}`}  data-aos="zoom-in" data-aos-anchor-placement="top-center">
         Project Highlight
       </h1>
       
-      <div className="w-full mt-5 text-center relative">
+      <div className="w-full mt-5 text-center relative" data-aos="flip-center" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="2000">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
