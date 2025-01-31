@@ -3,7 +3,7 @@ import Image from 'next/image'
 import HorizontalImage from '@/app/assests/images/horizontal-block.png'
 import WorkApproachImg from '@/app/assests/images/work-approach-bline.png'
 import { generalSemiBold, helvetica, helveticaBold } from '../font'
-import HorizonTab from '@/app/assests/images/horizontal-tab-view.png'
+import HorizonTab from '@/app/assests/images/horizontal-bg-line.png'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 
@@ -51,7 +51,7 @@ const HorizontalText = ({handleClick}: any) => {
       </p>
       <button
       onClick={handleClick}
-  className={`bg-[#0D0D0D] py-[12px] px-[34px] rounded-[8px] text-white text-[1.5rem] mt-[10px] 
+  className={`bg-[#0D0D0D] py-[12px] px-[34px] rounded-[8px] text-white text-[1.5rem] mt-[5px] 
     hover:opacity-75 transition-colors transition-opacity duration-300  md:py-[6px] md:px-[25px]
     ${helveticaBold.className}`}>
   Get in Touch

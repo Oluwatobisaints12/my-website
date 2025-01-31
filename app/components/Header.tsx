@@ -71,7 +71,7 @@ return (
     <div className=" py-[1rem] w-full px-[1rem]  flex justify-between items-center md:px-0 lg:px-0 md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
       {/* Logo or Brand */}
       <div className="mr-auto md:mr-0  lg:mr-0">
-   <h1 className={`${vanillaText.className} text-clamp-header-name`}>Great Anosike</h1>
+   <h1 className={`${vanillaText.className} text-[1.5rem] md:text-[1.5rem] lg:text-[2.5rem]`}>Great Anosike</h1>
 
       </div>
 
@@ -101,15 +101,15 @@ return (
 
       {/* Navigation List */}
       <ul
-        className={`fixed md:relative right-0  h-full md:p-0 w-[250px] md:w-full md:max-w-[404px] p-6 shadow-md md:shadow-none 
-          transform transition-all duration-300 ease-in-out md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex md:items-center md:gap-[12px] lg:gap-8
+        className={`fixed  right-0  h-full w-[250px] p-6 shadow-md 
+          transform transition-all duration-300 ease-in-out md:translate-x-0 md:relative md:p-0 md:opacity-100 md:shadow-none  md:w-full md:max-w-[404px]  md:pointer-events-auto md:flex md:items-center md:gap-[12px] lg:gap-8
           ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}
           ${theme === 'light' ? 'bg-white' : 'bg-black'}
           md:bg-transparent
         `}
       >
         {navItems.map((item) => (
-          <li key={item.name} className="md:flex py-2">
+          <li key={item.name} className=" py-2 md:flex md:text-[10px] lg:text-[1rem]">
             {item.name === "About" ? (
               <button
                 onClick={(e) => {
@@ -120,7 +120,7 @@ return (
                 className="cursor-pointer bg-transparent border-none"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -141,7 +141,7 @@ return (
                 className="cursor-pointer bg-transparent border-none"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -162,7 +162,7 @@ return (
                 className="cursor-pointer bg-transparent border-none"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -183,7 +183,7 @@ return (
                 className="cursor-pointer bg-transparent border-none"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -201,7 +201,7 @@ return (
                     e.preventDefault();
                     handleNavigation(item.path);
                   }}
-                  className={`text-[1rem] no-underline transition-colors duration-200 ${helvetica.className} ${
+                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"

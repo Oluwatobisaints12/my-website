@@ -11,7 +11,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 
 
-const MainPage = ({handleClick}: any) => {
+const MainPage = ({ handleClick }: any) => {
 
   useEffect(() => {
     Aos.init({
@@ -27,21 +27,21 @@ const MainPage = ({handleClick}: any) => {
   const handleButtonClick = () => {
     if (contactSectionRef.current) {
       contactSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    } 
+    }
   };
   return (
     <div className=' w-full flex flex-col justify-center  mt-[2.25rem] md:mt-[5rem]   md:flex md:justify-center md:items-center  lg:items-center lg:mt-[3rem] '>
-      <div className='flex flex-col md:flex md:flex-row md:items-center md:justify-between  md:mt-[2rem] md:max-w-[725px] md:w-full lg:flex lg:items-center lg:mt-[2rem] lg:flex-row  lg:justify-between lg:w-full lg:max-w-[1256px] '>
-        <div className=' md:w-full md:max-w-[417px] lg:w-full lg:max-w-[720px]'  data-aos="fade-right">
+      <div className='flex flex-col md:flex md:flex-row  md:justify-between  md:mt-[2rem] md:max-w-[725px] md:w-full lg:flex  lg:mt-[2rem] lg:flex-row  lg:justify-between lg:w-full lg:max-w-[1256px] '>
+        <div className=' md:w-full md:max-w-[417px] lg:w-full lg:max-w-[720px]' data-aos="fade-right">
           <h2 className={` mt-[1.25rem] ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
-            <span className={`text-[#F57F17] text-clamp-md ${generalSemiBold.className}`}>
+            <span className={`text-[#F57F17] text-[2.5rem] md:text-[2.25rem] lg:text-[4rem] ${generalSemiBold.className}`}>
               <TypeWriterEffect
                 textStyle={{
                   fontFamily: generalSemiBold,
                   fontWeight: '600',
                   // Assuming generalSemiBold maps to a font weight
                   color: '#F57F17', // Matches text-white
-                  fontSize: 'clamp(2.5rem, 5vw, 4rem)' // Add your specific text-clamp-md-header value here
+                  // Add your specific text-clamp-md-header value here
                 }}
                 startDelay={2000}
                 cursorColor="#F57F17"
@@ -57,23 +57,23 @@ const MainPage = ({handleClick}: any) => {
               />
 
             </span>
-           
-          </h2>
-          <span className={`${theme === "light" ? 'text-black' : 'text-white'} leading-[48px] lg:leading-[72px]  text-clamp-md ${generalSemiBold.className}`}>
-            Master Marketing with Strategy and Precision.
-            </span>
 
-          <p className={` ${helvetica.className}     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
- text-clamp-md-para mt-[8px] lg:mt-[1.25rem]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
+          </h2>
+          <span className={`${theme === "light" ? 'text-black' : 'text-white'} leading-[48px] lg:leading-[72px]  text-[#F57F17] text-[2.5rem] md:text-[2.25rem] lg:text-[4rem]  ${generalSemiBold.className}`}>
+            Master Marketing with Strategy and Precision.
+          </span>
+
+          <p className={` ${helvetica.className}     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} text-[1rem]
+md:text-[12px] lg:text-[18px] mt-[8px] lg:mt-[1.25rem]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
           <button
             onClick={handleClick}
-            className="px-6 py-3 bg-[#F57F17] text-white font-bold rounded-md hover:bg-yellow-800 transition-colors mt-[1.25rem] lg: mt-[2.5rem]     hover:opacity-75 transition-colors transition-opacity duration-300 "
+            className="px-6 py-3 bg-[#F57F17] text-white font-bold rounded-md hover:bg-yellow-800 transition-colors mt-[1.25rem] md:mt-[12px] lg:mt-[2.5rem] hover:opacity-75 transition-colors transition-opacity duration-300 "
           >
             Get in Touch
           </button>
         </div>
 
-        <div className='mt-[1.75rem]'  data-aos="flip-left">
+        <div className='mt-[1.75rem] md:mt-0 lg:mt-0' data-aos="flip-left">
           <Image
             src={DashboardImage}
             alt="Description"
@@ -85,7 +85,7 @@ const MainPage = ({handleClick}: any) => {
         </div>
       </div>
       <section>
-   
+
       </section>
 
     </div>

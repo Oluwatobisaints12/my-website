@@ -17,7 +17,7 @@ const Slider = () => {
     const { theme } = useTheme()
     return (
      <div className='w-full  md:flex md:justify-center md:items-center lg:flex lg:justify-center lg:items-center' data-aos="zoom-out" data-aos-anchor-placement="top-center">
-   <div className="relative flex flex-col mt-[2.5rem] md:items-center w-full md:justify-between md:flex md:w-full md:flex-row md:max-w-[726px] lg:items-center w-full lg:justify-between lg:flex lg:flex-row lg:max-w-[1262px]">
+   <div className="relative flex flex-col mt-[2.5rem] md:items-center w-full md:justify-between md:flex md:w-full md:flex-row md:max-w-[730px] lg:items-center w-full lg:justify-between lg:flex lg:flex-row lg:max-w-[1262px]">
             <div className="relative  group  justify-center flex md:max-w-[309px] lg:w-full lg:max-w-[531px]">
                 <Image
                     src={GreatAnosike}
@@ -25,7 +25,7 @@ const Slider = () => {
                     className=" object-cover transition-transform duration-500 group-hover:scale-105 rounded-[1.25rem]  "
                 />
             </div>
-            <div className="w-full md:w-[412px] lg:w-1/2 flex flex-col">
+            <div className="w-full md:w-[400px] lg:w-1/2 flex flex-col">
 
             
            <div className=''>
