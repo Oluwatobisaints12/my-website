@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 import MentorshipImage from '@/app/assests/images/mentorship-dashboard-image.jpg'
 import { generalMedium, generalSemiBold, helvetica } from '../font'
-import HorizontalMentorshipMobile from '@/app/assests/images/horizontalline-mobile-mentorship.png'
+import HorizontalMentorshipMobile from '@/app/assests/images/Vector (1).png'
 import HorizontalMentorship from '@/app/assests/images/horizontalline-memtorship.png'
 import HorizonMentorship from '@/app/assests/images/great-mentor.png'
 import Slider from '../components/card/Slider'
@@ -17,6 +17,8 @@ import GreatAnosike from '@/app/assests/images/great_anosike.jpg'
 import MentorshipContact from '../components/MentorshipContact'
 import TypeWriterEffect from 'react-typewriter-effect';
 import Header from '../components/Header'
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import Loading from '@/app/assests/images/loading.gif'
 
 // import GreatVidoClip  '@/public/great_video.mp4';
 interface scrollIntoView {
@@ -26,10 +28,49 @@ interface scrollIntoView {
 }
 const page = () => {
   const aboutContact = useRef<HTMLDivElement>(null);
+  
+  const abouMeRef = useRef<HTMLDivElement>(null);
+
+  const aboutWork = useRef<HTMLDivElement>(null);
+  const aboutTestimonials = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false);
+  
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    // Simulate a short delay before hiding the loader (adjust as needed)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // Adjust delay time
+
+    return () => clearTimeout(timer);
+  }, [pathname, searchParams]); // Run
 
   const handleNavigateToContact =()=>{
     if(aboutContact.current) {
       aboutContact.current.scrollIntoView({behavior: "smooth"})
+    }
+  }
+  const handleAboutme =()=> {
+    if(abouMeRef.current){
+      abouMeRef.current.scrollIntoView({behavior: "smooth"})
+
+    } 
+   }
+  const handleNavigateToWork =()=>{
+    if(aboutWork.current){
+      aboutWork.current.scrollIntoView({behavior: "smooth"})
+
+    }
+  }
+
+  const handleScrollToTestimonials =()=>{
+    if(aboutTestimonials.current){
+      aboutTestimonials.current.scrollIntoView({behavior: "smooth"})
+
     }
   }
   
@@ -37,8 +78,24 @@ const page = () => {
   return (
     <div className=' lg:flex lg:flex-col '>
       <div className='px-[1rem]'>
-      <Header  handleClick={handleNavigateToContact}/>
+      <Header  
+      handleClick={handleNavigateToContact}
+      onButtonClick={handleAboutme} 
+      buttonClick={handleNavigateToWork} 
+      handleButtonClick={handleScrollToTestimonials}
+      
+      />
       </div>
+      {isLoading ? (
+        <div className="flex justify-center items-center h-screen">
+          <Image 
+            alt="loading icon"
+            src={Loading}
+            width={50} // Ensure you specify width and height
+            height={50}
+          />
+        </div>
+      ) : (
       <div>
       <div className="relative   flex flex-col mt-[4rem] ">
       <video
@@ -46,7 +103,6 @@ const page = () => {
     loop
     muted
     className="w-full h-full object-cover "
-    poster="/video-poster.jpg"
      playsInline
       preload="metadata"
    
@@ -69,7 +125,7 @@ const page = () => {
         <Image
           src={HorizontalMentorshipMobile}
           alt="mentorship dashboard image"
-          className="flex md:hidden lg:hidden"
+          className="flex w-full h-[144px] md:hidden lg:hidden"
         />
 
 <Image
@@ -112,7 +168,7 @@ const page = () => {
       </div>
     </div>
       </div>
-
+      )}
     </div>
   )
 }

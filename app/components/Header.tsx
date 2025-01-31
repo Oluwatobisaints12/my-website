@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { helvetica, vanillaText } from "@/app/font";
 import { ModeToggle } from "./mode-toggle";
 import { useTheme } from "./theme-provider";
@@ -13,31 +13,62 @@ import Loading from '@/app/assests/images/loading.gif'
 
 
 
-const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick}: any) => {
+const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick, isLoading}: any) => {
   const router = useRouter()
 
   const pathname = usePathname();
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
+  // const [isLoading, setIsLoading] = useState(false);
+ const searchParams = useSearchParams()
 
 
   // Ensure the component is mounted before accessing theme
   useEffect(() => {
-    setMounted(true);
+    try{
+      setMounted(true);
+    }catch(error){
+      console.log('Error while mounting')
+    }
+   
   }, []);
-  
-const handleNavigation = async (path: string) => {
-try {
-  setIsLoading(true);
-  router.push(path);
-   setIsLoading(false);
-} catch(error){
-  console.log('Error while navigating ')
-}
-};
+
+  const handleAboutClick = () => {
+    if (pathname === "/") {
+      document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#about");
+    }
+  };
+  const handleWorkClick = () => {
+    if (pathname === "/") {
+      document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#work");
+    }
+  };
+
+  const handleContactClick = () => {
+    if (pathname === "/") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#contact");
+    }
+  };
+
+  const handleTestimonialClick = () => {
+    if (pathname === "/") {
+      document.getElementById("testimonial")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#testimonial");
+    }
+  };
+  // Navigation function
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
+
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "" },
@@ -48,10 +79,9 @@ try {
     { name: "Contact", path: "/contact" },
   ];
 
-  if (!mounted) {
-    // Placeholder to prevent mismatched styles during SSR
-    return null;
-  }
+  
+
+  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -66,7 +96,7 @@ try {
 };
 
 return (
-  <header className={`fixed  top-[-1px] left-0  w-full z-50 flex justify-center   ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
+  <header className={`fixed  top-0 left-0  w-full z-50 flex justify-center   ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
  
     <div className=" py-[1rem] w-full px-[1rem]  flex justify-between items-center md:px-0 lg:px-0 md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
       {/* Logo or Brand */}
@@ -115,6 +145,7 @@ return (
                 onClick={(e) => {
                   e.preventDefault();
                   onButtonClick();
+                  handleAboutClick()
                   toggleMobileMenu();
                 }}
                 className="cursor-pointer bg-transparent border-none"
@@ -136,6 +167,7 @@ return (
                 onClick={(e) => {
                   e.preventDefault();
                   buttonClick();
+                  handleWorkClick();
                   toggleMobileMenu();
                 }}
                 className="cursor-pointer bg-transparent border-none"
@@ -157,6 +189,7 @@ return (
                 onClick={(e)=> {
                   e.preventDefault();
                   handleClick();
+                  handleContactClick()
                   toggleMobileMenu();
                 }}
                 className="cursor-pointer bg-transparent border-none"
@@ -178,6 +211,7 @@ return (
                 onClick={(e)=> {
                   e.preventDefault();
                   handleButtonClick();
+                  handleTestimonialClick()
                   toggleMobileMenu();
                 }}
                 className="cursor-pointer bg-transparent border-none"
@@ -229,46 +263,7 @@ return (
    
   </header>
 );
-//     // Add a new wrapper div to handle the overall layout
-// <div className="relative w-full flex justify-center md:justify-center lg:justify-center pt-[2rem]">
-//   <div className="flex justify-between w-[398px] items-center md:justify-normal md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px] relative z-10">
-//     <section className="flex items-center md:w-[30%]">
-//       <h1 className={`${vanillaText.className} text-clamp-header-name`}>Great Anosike</h1>
-//     </section>
-// <div className="flex items-center md:w-full md:justify-between">
-// <div className="flex mr-[1rem] md:hidden lg:hidden">
-// <ModeToggle />
-// </div>
 
-//     {/* Navigation Section */}
- 
- 
-
-  
-
-//     <div className="hidden md:flex md:items-center lg:flex lg:ml-[2rem]">
-//     <ModeToggle  />
-//     </div>
-//     {/* Mobile Menu Toggle Button */}
-//     <div className="md:hidden lg:hidden">
-//       <button onClick={toggleMobileMenu} aria-label="Toggle menu" className="relative w-[18px] h-[12px] focus:outline-none">
-//         <div
-//           className={`
-//             absolute top-1/2 left-0 w-full h-[2px] 
-//             before:content-[''] before:absolute before:left-0 before:w-full before:h-[2px]
-//             after:content-[''] after:absolute after:left-0 after:w-full after:h-[2px]
-//             before:transition-all before:duration-300 after:transition-all after:duration-300
-//             ${theme === "dark" ? "bg-white before:bg-white after:bg-white" : "bg-[#1C1B1B] before:bg-[#1C1B1B] after:bg-[#1C1B1B]"}
-//             ${isMobileMenuOpen ? "bg-transparent before:top-0 before:rotate-45 after:top-0 after:-rotate-45" : "before:-top-2 after:top-2"}
-//           `}
-//         />
-//       </button>
-//     </div>
-// </div>
-//   </div>
-// </div>
-
-//   );
 };
 
 export default Header;
