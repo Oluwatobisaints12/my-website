@@ -47,12 +47,12 @@ const page = () => {
     muted
     className="w-full h-full object-cover "
     poster="/video-poster.jpg"
-    preload="metadata"
+     playsInline
+      preload="metadata"
    
   >
     <source src="/great-new-mentor-video.mp4" type="video/mp4" />
-    <source src="/great-new-mentor-video.webm" type="video/webm" />
-    Your browser does not support the video tag.
+    {/* <source src="/great-new-mentor-video.webm" type="video/webm" /> */}
   </video>
 
         <div className="absolute top-0 left-0 flex flex-col items-center w-full mt-[8px]  px-[0.75rem]   text-center  lg:px-[7rem]">

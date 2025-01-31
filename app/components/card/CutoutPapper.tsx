@@ -40,7 +40,7 @@ const CutoutPapper = () => {
     {/* Overlay Text */}
     <div className="absolute  top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center ">
       <div ref={myAppRef} className="absolute top-0 left-0 flex flex-col items-center justify-center h-full w-full mt-[10px] text-center px-[0.75rem] md:mt-[1rem] lg:mt-[1rem] lg:px-[3.5rem]">
-        <h1 className={`${generalSemiBold.className} text-[1.3rem] md:text-[24px] text-white lg:text-[2.3rem]`}>WELCOME TO THE OFFICIAL WEBSITE OF GREAT ANOSIKE</h1>
+        <h1 className={`${generalSemiBold.className} text-[1.4rem] md:text-[24px] text-white lg:text-[2.4rem]`}>WELCOME TO THE OFFICIAL WEBSITE OF GREAT ANOSIKE</h1>
      
         <p className={` text-white text-[10px] md:text-[13px] lg:text-[1.5rem] ${helvetica.className} `}>
   Discover Great Anosike's journey, achievements, and standout projects. 

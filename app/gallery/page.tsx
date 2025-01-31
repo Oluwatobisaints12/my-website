@@ -28,6 +28,7 @@ const page = () => {
           muted
           className="w-full h-full object-cover mt-[1rem]"
           preload="metadata"
+            playsInline
    
         >
           <source src="/great-new-gallery-video.mp4" type="video/mp4" />
