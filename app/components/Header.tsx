@@ -70,7 +70,7 @@ return (
  
     <div className=" py-[1rem] w-full px-[1rem]  flex justify-between items-center md:px-0 lg:px-0 md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
       {/* Logo or Brand */}
-      <div className="mr-auto  lg:mr-0">
+      <div className="mr-auto md:mr-0  lg:mr-0">
    <h1 className={`${vanillaText.className} text-clamp-header-name`}>Great Anosike</h1>
 
       </div>
@@ -102,7 +102,7 @@ return (
       {/* Navigation List */}
       <ul
         className={`fixed md:relative right-0  h-full md:p-0 w-[250px] md:w-full md:max-w-[404px] p-6 shadow-md md:shadow-none 
-          transform transition-all duration-300 ease-in-out md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex md:items-center md:gap-[1rem] lg:gap-8
+          transform transition-all duration-300 ease-in-out md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex md:items-center md:gap-[12px] lg:gap-8
           ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}
           ${theme === 'light' ? 'bg-white' : 'bg-black'}
           md:bg-transparent
