@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React,{useRef, useEffect, useState} from 'react'
 import Header from '../components/Header'
 import { generalMedium, generalSemiBold } from '../font'
 import { useTheme } from '../components/theme-provider'
@@ -15,155 +15,207 @@ import Cutest from '@/app/assests/images/great-cutest.png'
 import GreatWithLife from '@/app/assests/images/great-popping.png'
 import GreatSmile from '@/app/assests/images/great-beat-chest.jpg'
 import Footer from '../components/Footer'
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import Loading from '@/app/assests/images/loading.gif'
+
 
 const page = () => {
   const { theme } = useTheme()
+  const aboutContact = useRef<HTMLDivElement>(null);
+  
+  const abouMeRef = useRef<HTMLDivElement>(null);
+
+  const aboutWork = useRef<HTMLDivElement>(null);
+  const aboutTestimonials = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false);
+  
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    // Simulate a short delay before hiding the loader (adjust as needed)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // Adjust delay time
+
+    return () => clearTimeout(timer);
+  }, [pathname, searchParams]); // Run
+
+  const handleNavigateToContact =()=>{
+    if(aboutContact.current) {
+      aboutContact.current.scrollIntoView({behavior: "smooth"})
+    }
+  }
+  const handleAboutme =()=> {
+    if(abouMeRef.current){
+      abouMeRef.current.scrollIntoView({behavior: "smooth"})
+
+    } 
+   }
+  const handleNavigateToWork =()=>{
+    if(aboutWork.current){
+      aboutWork.current.scrollIntoView({behavior: "smooth"})
+
+    }
+  }
+  const handleScrollToTestimonials =()=>{
+    if(aboutTestimonials.current){
+      aboutTestimonials.current.scrollIntoView({behavior: "smooth"})
+
+    }
+  }
+
   return (
     <div className=''>
-      <Header />
-      <div className="relative flex flex-col mt-[1rem]">
-        <video
-          autoPlay
-          loop
-          muted
-          className="w-full h-full object-cover mt-[1rem]"
-          preload="metadata"
-            playsInline
-   
-        >
-          <source src="/great-new-gallery-video.mp4" type="video/mp4" />
-        </video>
-
-        <div className="absolute bottom-0 right-[12px]  text-center ">
-          <h2 className={` ${generalSemiBold.className} text-white text-clamp-mentorship-title `}>
-            Gallery
-          </h2>
-
+      <Header 
+            handleClick={handleNavigateToContact}
+            onButtonClick={handleAboutme} 
+            buttonClick={handleNavigateToWork} 
+            handleButtonClick={handleScrollToTestimonials}
+      />
+       {isLoading ? (
+        <div className="flex justify-center items-center h-screen">
+          <Image 
+            alt="loading icon"
+            src={Loading}
+            width={50} // Ensure you specify width and height
+            height={50}
+          />
         </div>
+      ) : (
+      <><div className="relative flex flex-col mt-[1rem]">
+            <video
+              autoPlay
+              loop
+              muted
+              className="w-full h-full object-cover mt-[1rem]"
+              preload="metadata"
+              playsInline
 
+            >
+              <source src="/great-new-gallery-video.mp4" type="video/mp4" />
+            </video>
 
-
-      </div>
-      <div className='text-center mt-[1rem] px-[1rem] lg:mt-[2.375rem]'  >
-        <p className={`${generalMedium.className} text-[1.25rem] md:text-[1.875rem] lg:text-[3.175rem]  ${theme === "light" ? 'text-dark' : 'text-white'}`} data-aos="zoom-out" data-aos-anchor-placement="top-center">
-          Explore the impactful campaigns and projects crafted by Great Chisom Anosike. From large-scale product activations to immersive brand experiences, each picture tells a story of innovation, strategy, and measurable success.
-        </p>
-      </div>
-      <div className='w-full lg:flex mt-[1.25rem] md:mt-[1.5rem] md:w-full md:flex md:justify-center md:items-center lg:justify-center lg:items-center lg:mt-[2.5rem]'>
-        <div className='flex flex-col gap-[1rem] px-[1rem] md:flex md:flex-col md:max-w-[730px] lg:flex lg:flex-col w-full lg:max-w-[1252px] lg:gap-[1.25rem]'>
-
-          <div className='gap-[1rem] flex flex-col justify-center items-center md:flex md:flex-row lg:flex lg:flex-row lg:gap-[1.25rem]'>
-            <div className="relative  group   ">
-              <Image
-                src={BrandCommAwardSVG}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="Brand Communication Award"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-
+            <div className="absolute bottom-0 right-[12px]  text-center ">
+              <h2 className={` ${generalSemiBold.className} text-white text-clamp-mentorship-title `}>
+                Gallery
+              </h2>
 
             </div>
 
 
-            <div className="relative  group   ">
-              <Image
-                src={Chairman}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-            <div className="relative  group">
 
-              <Image
-                src={GreatWithMilo}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-          </div>
+          </div><div className='text-center mt-[1rem] px-[1rem] lg:mt-[2.375rem]'>
+              <p className={`${generalMedium.className} text-[1.25rem] md:text-[1.875rem] lg:text-[3.175rem]  ${theme === "light" ? 'text-dark' : 'text-white'}`} data-aos="zoom-out" data-aos-anchor-placement="top-center">
+                Explore the impactful campaigns and projects crafted by Great Chisom Anosike. From large-scale product activations to immersive brand experiences, each picture tells a story of innovation, strategy, and measurable success.
+              </p>
+            </div><div className='w-full lg:flex mt-[1.25rem] md:mt-[1.5rem] md:w-full md:flex md:justify-center md:items-center lg:justify-center lg:items-center lg:mt-[2.5rem]'>
+              <div className='flex flex-col gap-[1rem] px-[1rem] md:flex md:flex-col md:max-w-[730px] lg:flex lg:flex-col w-full lg:max-w-[1252px] lg:gap-[1.25rem]'>
 
-          <div className='gap-[1rem] flex justify-center items-center flex-col md:flex md:flex-row lg:flex lg:flex-row'>
-            <div className="relative  group">
-              <Image
-                src={Native}
-                className="w-[398px] lg:w-[403px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+                <div className='gap-[1rem] flex flex-col justify-center items-center md:flex md:flex-row lg:flex lg:flex-row lg:gap-[1.25rem]'>
+                  <div className="relative  group   ">
+                    <Image
+                      src={BrandCommAwardSVG}
+                      className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="Brand Communication Award"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 
-            </div>
-            <div className="relative  group">
-              <Image
-                src={GreatWIthGlasses}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
 
-            <div className="relative  group">
-              <Image
-                src={GreatAway}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-          </div>
-          <div className='gap-[1rem] justify-center items-center flex flex-col md:flex md:flex-row lg:flex lg:flex-row'>
-            <div className="relative  group">
-              <Image
-                src={Cutest}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-            <div className="relative  group">
-              <Image
-                src={GreatWithLife}
-                className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-            <div className="relative  group">
-              <Image
-                src={GreatSmile}
-                className="w-[398px] lg:h-[500px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
-                alt="email icon"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+                  </div>
 
-      <div className='mt-[1.25rem] px-[1rem] md:w-full md:flex md:justify-center md:items-center lg:w-full lg:flex lg:justify-center lg:items-center'>
-        <div className='w-full md:max-w-[730px] lg:max-w-[1252px] object-cover transition-transform duration-500 group-hover:scale-105'>
-          <Footer />
-        </div>
-      </div>
+
+                  <div className="relative  group   ">
+                    <Image
+                      src={Chairman}
+                      className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+                  <div className="relative  group">
+
+                    <Image
+                      src={GreatWithMilo}
+                      className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+                </div>
+
+                <div className='gap-[1rem] flex justify-center items-center flex-col md:flex md:flex-row lg:flex lg:flex-row'>
+                  <div className="relative  group">
+                    <Image
+                      src={Native}
+                      className="w-[398px] lg:w-[403px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+
+                  </div>
+                  <div className="relative  group">
+                    <Image
+                      src={GreatWIthGlasses}
+                      className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+
+                  <div className="relative  group">
+                    <Image
+                      src={GreatAway}
+                      className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+                </div>
+                <div className='gap-[1rem] justify-center items-center flex flex-col md:flex md:flex-row lg:flex lg:flex-row'>
+                  <div className="relative  group">
+                    <Image
+                      src={Cutest}
+                      className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+                  <div className="relative  group">
+                    <Image
+                      src={GreatWithLife}
+                      className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+                  <div className="relative  group">
+                    <Image
+                      src={GreatSmile}
+                      className="w-[398px] lg:h-[500px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt="email icon"
+                      quality={75}
+                      priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+                </div>
+              </div>
+            </div><div className='mt-[1.25rem] px-[1rem] md:w-full md:flex md:justify-center md:items-center lg:w-full lg:flex lg:justify-center lg:items-center'>
+              <div className='w-full md:max-w-[730px] lg:max-w-[1252px] object-cover transition-transform duration-500 group-hover:scale-105'>
+                <Footer />
+              </div>
+            </div></> 
+    )}
     </div>
   )
 }

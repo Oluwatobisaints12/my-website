@@ -13,7 +13,7 @@ import { addAnimation } from "./Infinite";
 import { generalSemiBold } from '../font'
 import { useTheme } from './theme-provider'
 
-const InfiniteScrolling = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>) => {
+const InfiniteScrolling = forwardRef<HTMLDivElement, { id: string }>((props, ref) => {
     useEffect(() => {
       addAnimation(); // Call the animation setup when the component mounts
     }, []);
@@ -22,7 +22,7 @@ const InfiniteScrolling = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedR
 
   
     return (
-      <div ref={ref} className=" mt-[2.5rem] lg:mt-[8rem]">
+      <div ref={ref} id={props.id} className=" mt-[2.5rem] lg:mt-[8rem]">
         <h1 className={`text-clamp-brand-text text-center mb-8 ${generalSemiBold.className}` }  >Working With Renowned Brands</h1>
         <div className="w-[400px] md:w-[768px] lg:w-[1256px]  scroller" data-speed="fast"  >
         <div className={`${resolvedTheme === "light" ? 'border border-black' : 'border border-white'} border tag-list scroller__inner py-4 flex flex-wrap items-center gap-[2.5rem] lg:gap-[4rem]`}>

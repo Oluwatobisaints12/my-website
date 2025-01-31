@@ -8,7 +8,7 @@ import './Aboutme.css'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 
-const Aboutme = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDivElement>)=> {
+const Aboutme = forwardRef<HTMLDivElement, { id: string }>((props, ref) => {
     const { theme } = useTheme();
     useEffect(() => {
         Aos.init({
@@ -18,7 +18,7 @@ const Aboutme = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedRef<HTMLDiv
       }, []);
 
     return (
-        <div ref={ref} className='flex flex-col mt-[5rem] md:flex md:flex-row md:w-full md:justify-between md:max-w-[725px] md:items-center lg:flex lg:flex-row  lg:items-center lg:justify-between lg:max-w-[1256px] lg:w-full'>
+        <div ref={ref} id={props.id} className='flex flex-col mt-[5rem] md:flex md:flex-row md:w-full md:justify-between md:max-w-[725px] md:items-center lg:flex lg:flex-row  lg:items-center lg:justify-between lg:max-w-[1256px] lg:w-full'>
         <div className='w-full order-1 md:order-2 lg:order-2 md:w-full md:max-w-[400px] lg:max-w-[692px]'  data-aos="fade-down"  >
         <h1 className={`${generalSemiBold.className} text-clamp-aboutme-text text-[1rem] text-[2.5rem] lg:text-[4rem]`}>About Me</h1>
             <p className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}

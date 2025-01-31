@@ -25,7 +25,7 @@ const CutoutPapper = () => {
     <Image
       src={MobileHorizonLine}
       alt="Mobile Horizon Line displaying Great Anosike's branding"
-      className="block md:hidden lg:hidden"
+      className="block w-full h-[220px] md:hidden lg:hidden"
       priority
     />
 
