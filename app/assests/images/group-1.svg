@@ -1,5 +1,5 @@
-<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_4918_2770" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="41">
+<svg width="30" height="40" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_4918_2770" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
 <path d="M20 40.5C8.95431 40.5 0 31.5457 0 20.5C0 9.4543 8.95431 0.5 20 0.5C31.0457 0.5 40 9.4543 40 20.5C40 31.5457 31.0457 40.5 20 40.5Z" fill="white"/>
 </mask>
 <g mask="url(#mask0_4918_2770)">
