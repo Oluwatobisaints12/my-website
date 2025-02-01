@@ -132,7 +132,7 @@ return (
       {/* Navigation List */}
       <ul
         className={`fixed  right-0  h-full w-[250px] p-6 shadow-md 
-          transform transition-all duration-300 ease-in-out md:translate-x-0 md:relative md:p-0 md:opacity-100 md:shadow-none  md:w-full md:max-w-[404px]  md:pointer-events-auto md:flex md:items-center md:gap-[12px] lg:gap-8
+          transform transition-all duration-300 ease-in-out md:translate-x-0 md:relative md:p-0 md:opacity-100 md:shadow-none  md:w-full md:max-w-[404px]  md:pointer-events-auto md:flex md:items-center md:gap-[12px] lg:w-full lg:max-w-[665px] lg:gap-8
           ${isMobileMenuOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}
           ${theme === 'light' ? 'bg-white' : 'bg-black'}
           md:bg-transparent
