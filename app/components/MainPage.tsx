@@ -33,7 +33,7 @@ const MainPage = ({ handleClick }: any) => {
     <div className=' w-full flex flex-col justify-center  mt-[2.25rem] md:mt-[6rem]   md:flex md:justify-center md:items-center  lg:items-center '>
       <div className='flex flex-col md:flex md:flex-row  md:justify-between  md:mt-[2rem] md:max-w-[725px] md:w-full lg:flex  lg:mt-[2rem] lg:flex-row  lg:justify-between lg:w-full lg:max-w-[1256px] '>
         <div className=' md:w-full md:max-w-[417px] lg:w-full lg:max-w-[720px]' data-aos="fade-right">
-          <h2 className={` mt-[1.25rem] ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
+          <h2 className={` mt-[2.25rem] ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
             <span className={`text-[#F57F17] text-[2.5rem] md:text-[2.25rem] lg:text-[4rem] ${generalSemiBold.className}`}>
               <TypeWriterEffect
                 textStyle={{
