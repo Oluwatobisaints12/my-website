@@ -1,7 +1,6 @@
 li {
     list-style: none; /* removes default bullet */
     position: relative;
-    padding-left: 1.5em; /* space for custom bullet */
   }
   
   li::before {
