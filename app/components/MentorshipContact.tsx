@@ -34,7 +34,7 @@ ${generalMedium.className}    text-[1rem] md:text-[1rem]
           </div>
           <p
             className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] lg:px-[28px] lg:py-[12px] `}>
+ lg:text-[1.75rem] lg:px-[20px] lg:py-[12px] `}>
             messagegreatanosike@gmail.com
           </p>
         </div>
@@ -55,7 +55,7 @@ ${generalMedium.className}    text-[1rem] md:text-[1rem]
           </div>
           <p
             className={`text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] lg:px-[28px] lg:py-[12px] `}>
+ lg:text-[1.75rem] lg:px-[20px] lg:py-[12px] `}>
             +234 813 663 4633
           </p>
         </div>
