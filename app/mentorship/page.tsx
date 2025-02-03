@@ -20,6 +20,7 @@ import Header from '../components/Header'
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import Loading from '@/app/assests/images/loading.gif'
 
+
 // import GreatVidoClip  '@/public/great_video.mp4';
 interface scrollIntoView {
   behavior?: "auto" | "smooth"; // Correct spelling
@@ -98,6 +99,10 @@ const page = () => {
       ) : (
       <div>
       <div className="relative   flex flex-col mt-[4rem] ">
+
+  
+
+
       <video
     autoPlay
     loop
