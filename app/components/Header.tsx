@@ -13,7 +13,7 @@ import Loading from '@/app/assests/images/loading.gif'
 
 
 
-const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick, isLoading}: any) => {
+const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick, handleMentorContact}: any) => {
   const router = useRouter()
 
   const pathname = usePathname();
@@ -189,7 +189,8 @@ return (
                 onClick={(e)=> {
                   e.preventDefault();
                   handleClick();
-                  handleContactClick()
+                  handleContactClick();
+                  handleMentorContact();
                   toggleMobileMenu();
                 }}
                 className="cursor-pointer bg-transparent border-none"
