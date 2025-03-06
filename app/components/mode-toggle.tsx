@@ -13,9 +13,7 @@ export function ModeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return <div className="w-[107px] h-[28px] lg:w-[121px] lg:h-[32px]" aria-hidden="true" />;
-  }
+ 
 
   return (
     <div
