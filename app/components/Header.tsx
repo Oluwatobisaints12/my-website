@@ -96,29 +96,29 @@ const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick, han
 };
 
 return (
-  <header className={`fixed  top-0 left-0  w-full z-50 flex justify-center   ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
+  <header className={`fixed  top-0 left-0  w-full z-50 flex md:justify-center lg:justify-center ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
  
-    <div className=" py-[1rem] w-full px-[1rem]  flex justify-between items-center md:px-0 lg:px-0 md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
+    <div className=" py-[1rem] w-full px-[1rem] flex justify-between items-center md:w-full md:px-0 md:max-w-[760px] lg:w-full lg:px-0 lg:max-w-[1256px] ">
       {/* Logo or Brand */}
-      <div className=" md:mr-0  lg:mr-0">
+      <div className="mr-auto md:mr-0  lg:mr-0">
    <h1 className={`${vanillaText.className} text-[1.5rem] md:text-[1.5rem] lg:text-[2.5rem]`}>Great Anosike</h1>
 
       </div>
 
       {/* Mobile Menu Toggle */}
-      <div className="flex flex-row items-center   md:hidden lg:hidden ">
+      {/* <div className="flex flex-row items-center  gap-[1rem] md:hidden lg:hidden ">
      
        
  <ModeToggle />
  
-        {/* <button 
+        <button 
           onClick={toggleMobileMenu} 
           className="focus:outline-none"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button> */}
+        </button>
  
-      </div>
+      </div> */}
    
 
       {/* Desktop Navigation */}
