@@ -106,17 +106,17 @@ return (
       </div>
 
       {/* Mobile Menu Toggle */}
-      <div className="flex flex-row items-center  gap-[1rem] md:hidden lg:hidden ">
+      <div className="flex flex-row items-center   md:hidden lg:hidden ">
      
        
  <ModeToggle />
  
-        <button 
+        {/* <button 
           onClick={toggleMobileMenu} 
           className="focus:outline-none"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        </button> */}
  
       </div>
    
