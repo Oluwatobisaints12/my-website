@@ -108,7 +108,10 @@ return (
       {/* Mobile Menu Toggle */}
       <div className="flex flex-row items-center  gap-[1rem] md:hidden lg:hidden ">
       <div className="flex  ">
- <ModeToggle />
+        <h1>
+          I love codding and fixing bugs 
+        </h1>
+ {/* <ModeToggle /> */}
  </div>
         <button 
           onClick={toggleMobileMenu} 
