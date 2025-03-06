@@ -100,19 +100,17 @@ return (
  
     <div className=" py-[1rem] w-full px-[1rem]  flex justify-between items-center md:px-0 lg:px-0 md:w-full md:max-w-[760px] lg:w-full lg:max-w-[1256px]">
       {/* Logo or Brand */}
-      <div className="mr-auto md:mr-0  lg:mr-0">
+      <div className=" md:mr-0  lg:mr-0">
    <h1 className={`${vanillaText.className} text-[1.5rem] md:text-[1.5rem] lg:text-[2.5rem]`}>Great Anosike</h1>
 
       </div>
 
       {/* Mobile Menu Toggle */}
       <div className="flex flex-row items-center  gap-[1rem] md:hidden lg:hidden ">
-      <div className="flex  ">
-        <h1>
-          I love codding and fixing bugs 
-        </h1>
- {/* <ModeToggle /> */}
- </div>
+     
+       
+ <ModeToggle />
+ 
         <button 
           onClick={toggleMobileMenu} 
           className="focus:outline-none"
