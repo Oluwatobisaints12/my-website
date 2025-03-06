@@ -139,7 +139,7 @@ useEffect(() => {
           <div className="px-[1rem] flex flex-col w-full justify-center items-center">
             <Aboutme ref={abouMeRef} id="about" />
             <InfiniteScrolling ref={aboutWork} id="work"/>
-            {/* <ProjectHighlight /> */}
+            <ProjectHighlight />
             {/* <Testimonials ref={aboutTestimonials} id="testimonial"/> */}
           </div>
   
