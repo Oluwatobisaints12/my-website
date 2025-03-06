@@ -140,7 +140,7 @@ useEffect(() => {
             <Aboutme ref={abouMeRef} id="about" />
             <InfiniteScrolling ref={aboutWork} id="work"/>
             {/* <ProjectHighlight /> */}
-            <Testimonials ref={aboutTestimonials} id="testimonial"/>
+            {/* <Testimonials ref={aboutTestimonials} id="testimonial"/> */}
           </div>
   
           <div className="w-full flex justify-center items-center">
