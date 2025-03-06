@@ -105,14 +105,14 @@ useEffect(() => {
   return (
     <div className="pb-[1rem]">
       {/* ✅ Always render the Header */}
-      {/* <div className="px-[1rem] flex flex-col justify-center items-center overflow-hidden">
+      <div className="px-[1rem] flex flex-col justify-center items-center overflow-hidden">
         <Header  
           onButtonClick={handleAboutme} 
           buttonClick={handleNavigateToWork} 
           handleClick={handleScrollToContact} 
           handleButtonClick={handleScrollToTestimonials}
         />
-      </div> */}
+      </div>
   
       {/* ✅ Show Loading Icon OR Content */}
       {isLoading ? (
