@@ -106,7 +106,7 @@ return (
       </div>
 
       {/* Mobile Menu Toggle */}
-      {/* <div className="flex flex-row items-center  gap-[1rem] md:hidden lg:hidden ">
+      <div className="flex flex-row items-center  gap-[1rem] md:hidden lg:hidden ">
      
        
  <ModeToggle />
@@ -118,7 +118,7 @@ return (
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
  
-      </div> */}
+      </div>
    
 
       {/* Desktop Navigation */}
