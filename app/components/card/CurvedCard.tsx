@@ -24,7 +24,7 @@ const CurvedCard = () => {
 
     return (
  <div className='flex flex-col  mt-[20px]  md:flex md:flex-row md:items-center md:justify-between lg:flex  lg:flex-row lg:items-center lg:justify-between'>
-  <div className='order-1 flex flex-col gap-[12px] w-[398px] md:w-full md:max-w-[356px]  md:order-2 md:gap-0  lg:order-2  lg:max-w-[616px]  lg:w-full  lg:flex lg:flex-col' data-aos="fade-down" >
+  <div className='order-1 flex flex-col gap-[12px]  md:w-full md:max-w-[356px]  md:order-2 md:gap-0  lg:order-2  lg:max-w-[616px]  lg:w-full  lg:flex lg:flex-col' data-aos="fade-down" >
        <div className={` ${theme === 'light' ? 'light-theme' : 'dark-theme'} card rounded-[1.25rem] px-[14px] py-[9px]   md:px-[13px] md:py-[7px]  lg:w-full lg:py-[1rem] lg:px-[24px]`}>
     <div className="card-content">
       <p className={` text-[12px]  md:text-[10px] lg:text-[1.125rem]  ${helvetica.className}`}>"Working with Great was an absolute game-changer for our team. His strategic insights and hands-on approach made complex projects feel achievable. Great doesn't just execute tasks; he aligns every step with the bigger picture, ensuring long-term value."</p>
@@ -87,7 +87,7 @@ const CurvedCard = () => {
 </div>
 
 </div>
-<div className='mt-[2.5rem] w-[398px] md:w-full md:max-w-[356px] lg:w-full lg:max-w-[616px]  order-2  md:mt-0  md:order-1 lg:order-1 flex items-center justify-center lg:w-[616px] lg:h-[667px]' data-aos="fade-up" >
+<div className='mt-[2.5rem]  md:w-full md:max-w-[356px] lg:w-full lg:max-w-[616px]  order-2  md:mt-0  md:order-1 lg:order-1 flex items-center justify-center lg:w-[616px] lg:h-[667px]' data-aos="fade-up" >
 <Image
      src={GreatTestimonial}
     alt='testimonial image'
