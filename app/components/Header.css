@@ -1,0 +1,8 @@
+li::before {
+    content: none !important;
+    padding: 0;
+}
+
+li{
+    padding: 0;
+}

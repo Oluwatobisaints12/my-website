@@ -1,0 +1,107 @@
+.card {
+  
+    background-color: #212121;
+    color: white;
+    position: relative;
+    border-radius: 20px;
+    overflow: visible;
+  }
+  
+  .circle {
+    position: absolute;
+    bottom: -10px;
+    right: -6px;
+    width: 42px;
+    height: 42px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 2s linear infinite;
+  }
+
+  .light-theme {
+    border: 8px solid #FFFFFF; /* Light theme border color */
+  }
+  
+  .dark-theme {
+    border: 8px solid black; /* Dark theme border color */
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  .light-theme {
+    --shadow-color:  #ffffff;
+  }
+  
+  .dark-theme {
+    --shadow-color: #000000;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    bottom: 31px;
+    right: -1px;
+    width: 18px;
+    height: 18px;
+    z-index: 10;
+    border-bottom-right-radius: 20px;
+    box-shadow: 6px 6px var(--shadow-color);
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 34px;
+    width: 15px;
+    height: 15px;
+    z-index: 10;
+    border-bottom-right-radius: 20px;
+    box-shadow: 6px 6px var(--shadow-color);
+  }
+  
+  /* .light-theme {
+    box-shadow: 6px 6px white;
+  }
+
+  .dark-theme{
+    box-shadow: 6px 6px #000000;
+  } */
+ 
+/* .circle{
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+} */
+
+
+
+/* @media (min-width: 1024px) {
+  .circle{
+    border: 8px solid white;
+  }
+  .card::before{
+    content: '';
+    position: absolute;
+    background-color: white;
+    bottom: 26px;
+    right: -8px;
+    width: 10px;
+    height: 10px;
+    z-index: 10;
+    border-bottom-right-radius: 20px;
+    box-shadow: -6px 6px white;
+  }
+} */
