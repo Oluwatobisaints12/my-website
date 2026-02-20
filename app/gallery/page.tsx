@@ -91,8 +91,9 @@ const page = () => {
               loop
               muted
               className="w-full h-full object-cover mt-[1rem]"
-              preload="metadata"
+              preload="auto"
               playsInline
+              poster={GreatWithMilo.src}
 
             >
               <source src="/great-new-gallery-video.mp4" type="video/mp4" />
@@ -134,7 +135,6 @@ const page = () => {
                       className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
                   <div className="relative  group">
@@ -144,7 +144,6 @@ const page = () => {
                       className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
                 </div>
@@ -156,7 +155,6 @@ const page = () => {
                       className="w-[398px] lg:w-[403px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 
                   </div>
@@ -166,7 +164,6 @@ const page = () => {
                       className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
 
@@ -176,7 +173,6 @@ const page = () => {
                       className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
                 </div>
@@ -187,7 +183,6 @@ const page = () => {
                       className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
                   <div className="relative  group">
@@ -196,7 +191,6 @@ const page = () => {
                       className="w-[398px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
                   <div className="relative  group">
@@ -205,7 +199,6 @@ const page = () => {
                       className="w-[398px] lg:h-[500px] lg:w-[403px] object-cover transition-transform duration-500 group-hover:scale-105"
                       alt="email icon"
                       quality={75}
-                      priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </div>
                 </div>

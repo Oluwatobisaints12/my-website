@@ -111,6 +111,7 @@ const ProjectHighlight = () => {
                   muted
                   playsInline
                   preload="metadata"
+                  poster={BrandImg.src}
                   className="w-[398px] h-[266px] md:w-[400px] lg:w-[700px] lg:h-[468px] object-cover cursor-pointer"
                 >
                   <source src={src} type="video/mp4" />
@@ -138,4 +139,3 @@ const ProjectHighlight = () => {
 };
 
 export default ProjectHighlight;
-

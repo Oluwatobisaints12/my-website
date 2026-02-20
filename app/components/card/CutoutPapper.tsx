@@ -26,7 +26,6 @@ const CutoutPapper = () => {
       src={MobileHorizonLine}
       alt="Mobile Horizon Line displaying Great Anosike's branding"
       className="block w-full h-[220px] md:hidden lg:hidden"
-      priority
     />
 
 
@@ -34,7 +33,6 @@ const CutoutPapper = () => {
       src={DesktopHorizonLine}
       alt="Mobile Horizon Line displaying Great Anosike's branding"
       className="hidden md:flex lg:flex "
-      priority
     />
 
     {/* Overlay Text */}

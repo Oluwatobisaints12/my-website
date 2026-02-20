@@ -1,10 +1,7 @@
 
 "use client"
 import Header from "./components/Header";
-import { ThemeProvider } from "next-themes";
 import './globals.css'
-
-import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import MainPage from "./components/MainPage";
 import Aboutme from "./components/Aboutme";
@@ -18,7 +15,10 @@ import Contact from "./components/Contact";
 import CutoutPapper from "./components/card/CutoutPapper";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import Loading from '@/app/assests/images/loading.gif'
+import book from '@/app/assests/images/chat-img.png'
 import Image from "next/image";
+import Link from "next/link";
+import { generalLight, generalMedium, generalSanBold, generalSemiBold, helvetica, helveticaBold } from "./font";
 interface ScrollIntoViewOptions {
   behavior?: "auto" | "smooth"; // Correct spelling
   block?: "start" | "center" | "end" | "nearest";
@@ -34,13 +34,13 @@ export default function Home() {
 
   const aboutContact = useRef<HTMLDivElement>(null);
 
-  const aboutTestimonials= useRef<HTMLDivElement>(null);
+  const aboutTestimonials = useRef<HTMLDivElement>(null);
 
   const router = useRouter()
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
-  
+
 
   useEffect(() => {
     setIsLoading(true);
@@ -53,49 +53,50 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [pathname, searchParams]); // Run
 
- 
-useEffect(() => {
-  // Check for section query params and scroll to the appropriate section
-  const section = searchParams.get("section");
 
-  setTimeout(() => {
-    if (section === "about" && abouMeRef.current !== null) {
-      abouMeRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (section === "work" && aboutWork.current !== null) {
-      aboutWork.current.scrollIntoView({ behavior: "smooth" });
-    } else if (section === "testimonial" && aboutTestimonials.current !== null) {
-      aboutTestimonials.current.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    // Check for section query params and scroll to the appropriate section
+    const section = searchParams.get("section");
+
+    setTimeout(() => {
+      if (section === "about" && abouMeRef.current !== null) {
+        abouMeRef.current.scrollIntoView({ behavior: "smooth" });
+      } else if (section === "work" && aboutWork.current !== null) {
+        aboutWork.current.scrollIntoView({ behavior: "smooth" });
+      } else if (section === "testimonial" && aboutTestimonials.current !== null) {
+        aboutTestimonials.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 200);
+  }, [searchParams]);
+
+  const handleScrollToAbout = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" })
     }
-  }, 200);
-}, [searchParams]);
+  }
 
-  const handleScrollToAbout =()=> {
-    if(aboutRef.current){
-    aboutRef.current.scrollIntoView({behavior: "smooth"})
-  }}
-
-  const handleAboutme =()=> {
-    if(abouMeRef.current){
-      abouMeRef.current.scrollIntoView({behavior: "smooth"})
-
-    } 
-   }
-  const handleNavigateToWork =()=>{
-    if(aboutWork.current){
-      aboutWork.current.scrollIntoView({behavior: "smooth"})
+  const handleAboutme = () => {
+    if (abouMeRef.current) {
+      abouMeRef.current.scrollIntoView({ behavior: "smooth" })
 
     }
   }
-  const handleScrollToContact =()=>{
-    if(aboutContact.current){
-      aboutContact.current.scrollIntoView({behavior: "smooth"})
+  const handleNavigateToWork = () => {
+    if (aboutWork.current) {
+      aboutWork.current.scrollIntoView({ behavior: "smooth" })
 
     }
   }
-  
-  const handleScrollToTestimonials =()=>{
-    if(aboutTestimonials.current){
-      aboutTestimonials.current.scrollIntoView({behavior: "smooth"})
+  const handleScrollToContact = () => {
+    if (aboutContact.current) {
+      aboutContact.current.scrollIntoView({ behavior: "smooth" })
+
+    }
+  }
+
+  const handleScrollToTestimonials = () => {
+    if (aboutTestimonials.current) {
+      aboutTestimonials.current.scrollIntoView({ behavior: "smooth" })
 
     }
   }
@@ -106,18 +107,18 @@ useEffect(() => {
     <div className="pb-[1rem]">
       {/* ✅ Always render the Header */}
       <div className="px-[1rem] flex flex-col justify-center items-center overflow-hidden">
-        <Header  
-          onButtonClick={handleAboutme} 
-          buttonClick={handleNavigateToWork} 
-          handleClick={handleScrollToContact} 
+        <Header
+          onButtonClick={handleAboutme}
+          buttonClick={handleNavigateToWork}
+          handleClick={handleScrollToContact}
           handleButtonClick={handleScrollToTestimonials}
         />
       </div>
-  
+
       {/* ✅ Show Loading Icon OR Content */}
       {isLoading ? (
         <div className="flex justify-center items-center h-screen">
-          <Image 
+          <Image
             alt="loading icon"
             src={Loading}
             width={50} // Ensure you specify width and height
@@ -129,31 +130,44 @@ useEffect(() => {
           <div className="px-[1rem] flex flex-col justify-center items-center overflow-hidden">
             <MainPage handleClick={handleScrollToContact} />
           </div>
-  
+
           {/* Full-width container for CutoutPapper */}
           <div className="w-full flex justify-center items-center">
             <CutoutPapper />
           </div>
-  
+
           {/* Continue with padded content */}
           <div className="px-[1rem] flex flex-col w-full justify-center items-center">
             <Aboutme ref={abouMeRef} id="about" />
-            <InfiniteScrolling ref={aboutWork} id="work"/>
+            <InfiniteScrolling ref={aboutWork} id="work" />
             <ProjectHighlight />
-            <Testimonials ref={aboutTestimonials} id="testimonial"/>
+            <Testimonials ref={aboutTestimonials} id="testimonial" />
           </div>
-  
+
           <div className="w-full flex justify-center items-center">
             <HorizontalText handleClick={handleScrollToContact} />
           </div>
-  
+
           <div className="px-[1rem] flex flex-col justify-center items-center md:flex md:justify-center md:items-center">
-            <Contact ref={aboutContact} id="contact"/>
+            <div className="flex justify-start items-start mt-[2rem]  ">
+              <div className="relative w-fit">
+                <Image src={book} alt="book" width={217} height={217} />
+
+                <Link
+                  href="https://selar.com/150240c155"
+                  className={`absolute w-[max-content] px-[1rem] py-[4px] bottom-3 left-1/2 -translate-x-1/2 bg-[#F57F17] text-[10px] hover:underline cursor-pointer ${generalSemiBold.className}`}
+                >
+                  GET YOUR COPY NOW!!
+                </Link>
+              </div>
+
+            </div>
+            <Contact ref={aboutContact} id="contact" />
             <Footer />
           </div>
         </div>
       )}
     </div>
   );
-  
+
 }

@@ -109,7 +109,8 @@ const page = () => {
     muted
     className="w-full h-full object-cover "
      playsInline
-      preload="metadata"
+      preload="auto"
+      poster={MentorshipImage.src}
    
   >
     <source src="/great-new-mentor-video.mp4" type="video/mp4" />

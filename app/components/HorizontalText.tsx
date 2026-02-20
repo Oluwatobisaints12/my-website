@@ -30,14 +30,12 @@ const HorizontalText = ({handleClick}: any) => {
     
       alt="desktop yellow background"
       className="hidden md:hidden lg:block relative"
-      priority
     />
      <Image
       src={HorizonTab}
     
       alt="desktop yellow background"
       className="hidden md:flex relative lg:hidden"
-      priority
     />
   
     {/* Overlay content */}
