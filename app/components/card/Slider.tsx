@@ -46,16 +46,16 @@ const Slider = () => {
             >
                 <SwiperSlide>
                     <div className="flex ">
-                        <h1 className={`text-[1.5rem] md:text-[1.5rem] lg:text-[2.75rem] ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Tailored Guidance:  <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Receive personalized advice and strategies to navigate your unique challenges and career goals.</span></h1>
+                        <h1 className={`text-[clamp(1.5rem,3vw,2.75rem)] ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Tailored Guidance:  <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Receive personalized advice and strategies to navigate your unique challenges and career goals.</span></h1>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="flex flex-col">
-                        <h1 className={`text-[1.5rem] md:text-[1.5rem] lg:text-[2.75rem]  ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Industry Insights: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Gain insider knowledge on client relationship management, brand building, and market penetration strategies</span> </h1>          </div>
+                        <h1 className={`text-[clamp(1.5rem,3vw,2.75rem)]  ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Industry Insights: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Gain insider knowledge on client relationship management, brand building, and market penetration strategies</span> </h1>          </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="flex flex-col">
-                        <h1 className={`text-[1.5rem] md:text-[1.5rem] lg:text-[2.75rem]  ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Practical Skills Development: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Enhance your abilities in campaign planning, project management, digital marketing, and more.</span>  </h1>
+                        <h1 className={`text-[clamp(1.5rem,3vw,2.75rem)]  ${helveticaBold.className} ${theme === "light" ? 'text-black' : 'text-white'}`}>Practical Skills Development: <span className={`${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${helvetica.className}`}>Enhance your abilities in campaign planning, project management, digital marketing, and more.</span>  </h1>
                     </div>
                 </SwiperSlide>
 

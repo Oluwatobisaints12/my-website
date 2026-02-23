@@ -2,14 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { helvetica, vanillaText } from "@/app/font";
 import { ModeToggle } from "./mode-toggle";
 import { useTheme } from "./theme-provider";
+import CustomButton from "./ui/buttons";
 import './Header.css'
 import { Menu, X } from "lucide-react";
-import Loading from '@/app/assests/images/loading.gif'
 
 
 
@@ -101,7 +100,7 @@ return (
     <div className=" py-[1rem] w-full px-[1rem] flex justify-between items-center md:w-full md:px-0 md:max-w-[760px] lg:w-full lg:px-0 lg:max-w-[1256px] ">
       {/* Logo or Brand */}
       <div className="mr-auto md:mr-0  lg:mr-0">
-   <h1 className={`${vanillaText.className} text-[1.5rem] md:text-[1.5rem] lg:text-[2.5rem]`}>Great Anosike</h1>
+   <h1 className={`${vanillaText.className} text-[clamp(1.5rem,2.5vw,2.5rem)]`}>Great Anosike</h1>
 
       </div>
 
@@ -111,12 +110,14 @@ return (
        
  <ModeToggle />
  
-        <button 
+        <CustomButton 
           onClick={toggleMobileMenu} 
-          className="focus:outline-none"
+          variant="icon"
+          size="icon"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        </CustomButton>
  
       </div>
    
@@ -140,19 +141,20 @@ return (
         `}
       >
         {navItems.map((item) => (
-          <li key={item.name} className=" py-2 md:flex md:text-[10px] lg:text-[1rem]">
+          <li key={item.name} className=" py-2 md:flex text-[clamp(0.625rem,1vw,1rem)]">
             {item.name === "About" ? (
-              <button
+              <CustomButton
                 onClick={(e) => {
                   e.preventDefault();
                   onButtonClick();
                   handleAboutClick()
                   toggleMobileMenu();
                 }}
-                className="cursor-pointer bg-transparent border-none"
+                variant="ghost"
+                size="nav"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
+                  className={`text-[clamp(0.625rem,1vw,1rem)] no-underline transition-colors duration-200 ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -162,19 +164,20 @@ return (
                 >
                   {item.name}
                 </span>
-              </button>
+              </CustomButton>
             ) : item.name === "Work" ? (
-              <button
+              <CustomButton
                 onClick={(e) => {
                   e.preventDefault();
                   buttonClick();
                   handleWorkClick();
                   toggleMobileMenu();
                 }}
-                className="cursor-pointer bg-transparent border-none"
+                variant="ghost"
+                size="nav"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
+                  className={`text-[clamp(0.625rem,1vw,1rem)] no-underline transition-colors duration-200 ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -184,9 +187,9 @@ return (
                 >
                   {item.name}
                 </span>
-              </button>
+              </CustomButton>
             ) : item.name === 'Contact' ? (
-              <button 
+              <CustomButton 
                 onClick={(e)=> {
                   e.preventDefault();
                   handleClick();
@@ -194,10 +197,11 @@ return (
                   handleMentorContact();
                   toggleMobileMenu();
                 }}
-                className="cursor-pointer bg-transparent border-none"
+                variant="ghost"
+                size="nav"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
+                  className={`text-[clamp(0.625rem,1vw,1rem)] no-underline transition-colors duration-200 ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -207,19 +211,20 @@ return (
                 >
                   {item.name}
                 </span>
-              </button>
+              </CustomButton>
             ) : item.name === 'Testimonial' ? (
-              <button 
+              <CustomButton 
                 onClick={(e)=> {
                   e.preventDefault();
                   handleButtonClick();
                   handleTestimonialClick()
                   toggleMobileMenu();
                 }}
-                className="cursor-pointer bg-transparent border-none"
+                variant="ghost"
+                size="nav"
               >
                 <span
-                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
+                  className={`text-[clamp(0.625rem,1vw,1rem)] no-underline transition-colors duration-200 ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"
@@ -229,7 +234,7 @@ return (
                 >
                   {item.name}
                 </span>
-              </button>
+              </CustomButton>
             ) : (
               <Link href={item.path}>
                 <span
@@ -237,7 +242,7 @@ return (
                     e.preventDefault();
                     handleNavigation(item.path);
                   }}
-                  className={`text-[1rem] no-underline transition-colors duration-200 md:text-[10px] lg:text-[1rem] ${helvetica.className} ${
+                  className={`text-[clamp(0.625rem,1vw,1rem)] no-underline transition-colors duration-200 ${helvetica.className} ${
                     pathname === item.path
                       ? "text-[#F57F17]"
                       : theme === "dark"

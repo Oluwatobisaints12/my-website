@@ -30,15 +30,13 @@ const Contact =  forwardRef<HTMLDivElement, { id: string }>((props, ref) => {
         {/* Description */}
         <p
           className={`      ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
-          text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] ${helvetica.className} `}>
+          text-[clamp(1rem,1.8vw,1.75rem)] ${helvetica.className} `}>
           Ready to elevate your brand or discuss your next big campaign? Let’s
           connect and make an impact together.
         </p>
         <p
           className={`    ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
-    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] ${helvetica.className}  mt-[1rem]`}>
+    text-[clamp(1rem,1.8vw,1.75rem)] ${helvetica.className}  mt-[1rem]`}>
           I’m here to listen, strategize, and craft marketing solutions that drive
           results.
         </p>
@@ -53,14 +51,12 @@ const Contact =  forwardRef<HTMLDivElement, { id: string }>((props, ref) => {
             <p
               className={`    ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
 
-${generalMedium.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] `}>
+${generalMedium.className} text-[clamp(1rem,1.8vw,1.75rem)] `}>
               Email
             </p>
           </div>
           <p
-            className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] lg:px-[28px] lg:py-[12px]`}>
+            className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className} text-[clamp(1rem,1.8vw,1.75rem)] lg:px-[28px] lg:py-[12px]`}>
             messagegreatanosike@gmail.com
           </p>
         </div>
@@ -74,14 +70,12 @@ ${generalMedium.className}    text-[1rem] md:text-[1rem]
             <p
               className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
 
-${generalMedium.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] `}>
+${generalMedium.className} text-[clamp(1rem,1.8vw,1.75rem)] `}>
               Phone
             </p>
           </div>
           <p
-            className={`text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] lg:px-[28px] lg:py-[12px]`}>
+            className={`text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className} text-[clamp(1rem,1.8vw,1.75rem)] lg:px-[28px] lg:py-[12px]`}>
             +234 813 663 4633
           </p>
         </div>

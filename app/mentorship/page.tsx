@@ -11,22 +11,15 @@ import Slider from '../components/card/Slider'
 import GroupCard from '../components/card/GroupCard'
 import MentorshipText from '../components/card/MentorshipText'
 import ContactUs from '../components/card/ContactUs'
-import Contact from '../components/Contact'
 import Footer from '../components/Footer'
-import GreatAnosike from '@/app/assests/images/great_anosike.jpg'
 import MentorshipContact from '../components/MentorshipContact'
-import TypeWriterEffect from 'react-typewriter-effect';
 import Header from '../components/Header'
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 import Loading from '@/app/assests/images/loading.gif'
+import MarketingHandbook from '../components/MarketingHandbook'
 
 
-// import GreatVidoClip  '@/public/great_video.mp4';
-interface scrollIntoView {
-  behavior?: "auto" | "smooth"; // Correct spelling
-  block?: "start" | "center" | "end" | "nearest";
-  inline?: "start" | "center" | "end" | "nearest";
-}
+
 const page = () => {
   const aboutContact = useRef<HTMLDivElement>(null);
   
@@ -118,10 +111,10 @@ const page = () => {
   </video>
 
         <div className="absolute top-0 left-0 flex flex-col items-center w-full mt-[8px]  px-[0.75rem]   text-center  lg:px-[7rem]">
-          <h2 className={` ${generalSemiBold.className} text-white mt-[8px] text-[1.25rem] md:text-[2rem] md:mt-[2.5625rem] lg:text-[3.5rem] lg:mt-[4rem]`}>
+          <h2 className={` ${generalSemiBold.className} text-white mt-[8px] text-[clamp(1.25rem,4vw,3.5rem)] md:mt-[2.5625rem] lg:mt-[4rem]`}>
             Mentorship with Great Chisom Anosike
           </h2>
-          <p className={`text-[12px] md:text-[0.75rem] lg:text-[1.25rem]  text-white md-w-full md:max-w-[675px] lg:w-full lg:max-w-[1166px]  ${generalMedium.className} `}>
+          <p className={`text-[clamp(0.75rem,1.3vw,1.25rem)] text-white md-w-full md:max-w-[675px] lg:w-full lg:max-w-[1166px]  ${generalMedium.className} `}>
             Great Chisom Anosike is passionate about sharing his knowledge and helping aspiring marketers, brand strategists, and event managers excel in their careers. With over five years of experience driving impactful campaigns and building successful brands across diverse industries, Great offers valuable insights and guidance to help you thrive in a competitive market.    </p>
         </div>
 
@@ -145,7 +138,7 @@ const page = () => {
           className=" hidden lg:block mt-[-3rem] md:w-full"
         />
         <div className='absolute top-0 left-0 flex flex-col items-center justify-center h-full w-full text-center '>
-          <h1 className={` text-[1.25rem] md:text-[2.25rem] lg:text-[4rem] ${generalSemiBold.className} text-white`}>
+          <h1 className={` text-[clamp(1.25rem,4.5vw,4rem)] ${generalSemiBold.className} text-white`}>
           Why Choose Mentorship with Great?
 
           
@@ -159,6 +152,7 @@ const page = () => {
     
 
       <GroupCard />
+      <MarketingHandbook/>
       <div className='w-full md:flex md:justify-center md:items-center lg:flex lg:justify-center lg:items-center'>
       <MentorshipText />
       </div>

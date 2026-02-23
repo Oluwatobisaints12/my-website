@@ -109,7 +109,7 @@ const page = () => {
 
 
           </div><div className='text-center mt-[1rem] px-[1rem] lg:mt-[2.375rem]'>
-              <p className={`${generalMedium.className} text-[1.25rem] md:text-[1.875rem] lg:text-[3.175rem]  ${theme === "light" ? 'text-dark' : 'text-white'}`} data-aos="zoom-out" data-aos-anchor-placement="top-center">
+              <p className={`${generalMedium.className} text-[clamp(1.25rem,3.5vw,3.175rem)]  ${theme === "light" ? 'text-dark' : 'text-white'}`} data-aos="zoom-out" data-aos-anchor-placement="top-center">
                 Explore the impactful campaigns and projects crafted by Great Chisom Anosike. From large-scale product activations to immersive brand experiences, each picture tells a story of innovation, strategy, and measurable success.
               </p>
             </div><div className='w-full lg:flex mt-[1.25rem] md:mt-[1.5rem] md:w-full md:flex md:justify-center md:items-center lg:justify-center lg:items-center lg:mt-[2.5rem]'>

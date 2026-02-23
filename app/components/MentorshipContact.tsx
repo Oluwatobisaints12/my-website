@@ -27,14 +27,12 @@ const MentorshipContact = forwardRef<HTMLDivElement, {}>((props, ref: ForwardedR
             <p
               className={`    ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
 
-${generalMedium.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem]  `}>
+${generalMedium.className} text-[clamp(1rem,1.8vw,1.75rem)]  `}>
               Email
             </p>
           </div>
           <p
-            className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] lg:px-[20px] lg:py-[12px] `}>
+            className={` text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className} text-[clamp(1rem,1.8vw,1.75rem)] lg:px-[20px] lg:py-[12px] `}>
             messagegreatanosike@gmail.com
           </p>
         </div>
@@ -48,14 +46,12 @@ ${generalMedium.className}    text-[1rem] md:text-[1rem]
             <p
               className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
 
-${generalMedium.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] `}>
+${generalMedium.className} text-[clamp(1rem,1.8vw,1.75rem)] `}>
               Phone
             </p>
           </div>
           <p
-            className={`text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className}    text-[1rem] md:text-[1rem]
- lg:text-[1.75rem] lg:px-[20px] lg:py-[12px] `}>
+            className={`text-white bg-[#1C1B1B] py-[8px] px-[8px] rounded-[34px] ${helvetica.className} text-[clamp(1rem,1.8vw,1.75rem)] lg:px-[20px] lg:py-[12px] `}>
             +234 813 663 4633
           </p>
         </div>

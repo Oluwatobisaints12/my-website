@@ -9,6 +9,7 @@ import { useTheme } from './theme-provider';
 import InfiniteScrolling from './InfiniteScrolling';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import CustomButton from './ui/buttons';
 
 
 const MainPage = ({ handleClick }: any) => {
@@ -34,7 +35,7 @@ const MainPage = ({ handleClick }: any) => {
       <div className='flex flex-col md:flex md:flex-row  md:justify-between  md:mt-[2rem] md:max-w-[725px] md:w-full lg:flex  lg:mt-[2rem] lg:flex-row  lg:justify-between lg:w-full lg:max-w-[1256px] '>
         <div className=' md:w-full md:max-w-[417px] lg:w-full lg:max-w-[720px]' data-aos="fade-right">
           <h2 className={` mt-[2.25rem] ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} ${generalSemiBold.className}  leading-[48px] lg:leading-[76px]`}>
-            <span className={`text-[#F57F17] text-[2.5rem] md:text-[2.25rem] lg:text-[4rem] ${generalSemiBold.className}`}>
+            <span className={`text-[#F57F17] text-[clamp(2.25rem,5vw,4rem)] ${generalSemiBold.className}`}>
               <TypeWriterEffect
                 textStyle={{
                   fontFamily: generalSemiBold,
@@ -59,18 +60,19 @@ const MainPage = ({ handleClick }: any) => {
             </span>
 
           </h2>
-          <span className={`${theme === "light" ? 'text-black' : 'text-white'} leading-[48px] lg:leading-[72px]  text-[#F57F17] text-[2.5rem] md:text-[2.25rem] lg:text-[4rem]  ${generalSemiBold.className}`}>
+          <span className={`${theme === "light" ? 'text-black' : 'text-white'} leading-[48px] lg:leading-[72px]  text-[#F57F17] text-[clamp(2.25rem,5vw,4rem)]  ${generalSemiBold.className}`}>
             Master Marketing with Strategy and Precision.
           </span>
 
-          <p className={` ${helvetica.className}     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} text-[1rem]
-md:text-[12px] lg:text-[18px] mt-[8px] lg:mt-[1.25rem]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
-          <button
+          <p className={` ${helvetica.className}     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'} text-[clamp(0.75rem,1.2vw,1.125rem)] mt-[8px] lg:mt-[1.25rem]`}>I am Great Chisom Anosike, a results-driven marketing professional and brand strategist with a passion for delivering impactful outcomes for individuals and organizations. With a wealth of experience across industries and proven track record of driving brand growth, executing high-impact campaigns, and fostering meaningful client relationships. </p>
+          <CustomButton
             onClick={handleClick}
-            className="px-6 py-3 bg-[#F57F17] text-white font-bold rounded-md hover:bg-yellow-800 transition-colors mt-[1.25rem] md:mt-[12px] lg:mt-[2.5rem] hover:opacity-75 transition-colors transition-opacity duration-300 "
+            variant="primary"
+            size="default"
+            className="mt-[1.25rem] md:mt-[12px] lg:mt-[2.5rem]"
           >
             Get in Touch
-          </button>
+          </CustomButton>
         </div>
 
         <div className='mt-[1.75rem] md:mt-0 lg:mt-0' data-aos="flip-left">

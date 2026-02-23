@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './ContactUs.css'
 import { helveticaBold, poppinsMedium } from '@/app/font';
+import CustomButton from '../ui/buttons';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -92,7 +93,7 @@ const ContactUs = () => {
     <form ref={form} onSubmit={sendEmail} className="space-y-4 md:w-[50%] lg:max-w-[510px] w-full">
       <div className="space-y-[1.25rem] mt-[1.25rem] md:mt-0 w-full">
         <div>
-          <label className={`block mb-2 ${poppinsMedium.className} text-[1rem]`}>Full Name</label>
+          <label className={`block mb-2 ${poppinsMedium.className} text-[clamp(0.9rem,1vw,1rem)]`}>Full Name</label>
           
           <input
             type="text"
@@ -104,7 +105,7 @@ const ContactUs = () => {
         </div>
 
         <div>
-          <label className={`block mb-2 ${poppinsMedium.className} text-[1rem]`}>Email Address</label>
+          <label className={`block mb-2 ${poppinsMedium.className} text-[clamp(0.9rem,1vw,1rem)]`}>Email Address</label>
           <input
             type="email"
             name="user_email"
@@ -116,7 +117,7 @@ const ContactUs = () => {
         </div>
 
         <div>
-          <label className={`block mb-2 ${poppinsMedium.className} text-[1rem]`}>Career Goals</label>
+          <label className={`block mb-2 ${poppinsMedium.className} text-[clamp(0.9rem,1vw,1rem)]`}>Career Goals</label>
           <input
             type="text"
             name="user_goals"
@@ -128,7 +129,7 @@ const ContactUs = () => {
         </div>
 
         <div>
-          <label className={`block mb-2 ${poppinsMedium.className} text-[1rem]`}>Reason for seeking mentorship</label>
+          <label className={`block mb-2 ${poppinsMedium.className} text-[clamp(0.9rem,1vw,1rem)]`}>Reason for seeking mentorship</label>
           <textarea
             name="message"
             placeholder="Enter your reason"
@@ -138,12 +139,14 @@ const ContactUs = () => {
           />
         </div>
 
-        <button
+        <CustomButton
           type="submit"
-          className={`px-[1.25rem] py-[12px] bg-[#F57F17] text-[1rem] text-white font-bold rounded-[6px] hover:bg-yellow-800 transition-colors mt-[1.25rem] lg: mt-[2.5rem]     hover:opacity-75 transition-colors transition-opacity duration-300 ${helveticaBold.className}`}
+          variant="primary"
+          size="compact"
+          className={`text-[clamp(0.9rem,1vw,1rem)] mt-[1.25rem] lg:mt-[2.5rem] ${helveticaBold.className}`}
           >
           Book your session now
-        </button>
+        </CustomButton>
       </div>
     </form>
   );

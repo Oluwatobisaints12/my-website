@@ -15,10 +15,7 @@ import Contact from "./components/Contact";
 import CutoutPapper from "./components/card/CutoutPapper";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import Loading from '@/app/assests/images/loading.gif'
-import book from '@/app/assests/images/chat-img.png'
 import Image from "next/image";
-import Link from "next/link";
-import { generalLight, generalMedium, generalSanBold, generalSemiBold, helvetica, helveticaBold } from "./font";
 interface ScrollIntoViewOptions {
   behavior?: "auto" | "smooth"; // Correct spelling
   block?: "start" | "center" | "end" | "nearest";
@@ -149,19 +146,6 @@ export default function Home() {
           </div>
 
           <div className="px-[1rem] flex flex-col justify-center items-center md:flex md:justify-center md:items-center">
-            <div className="flex justify-start items-start mt-[2rem]  ">
-              <div className="relative w-fit">
-                <Image src={book} alt="book" width={217} height={217} />
-
-                <Link
-                  href="https://selar.com/150240c155"
-                  className={`absolute w-[max-content] px-[1rem] py-[4px] bottom-3 left-1/2 -translate-x-1/2 bg-[#F57F17] text-[10px] hover:underline cursor-pointer ${generalSemiBold.className}`}
-                >
-                  GET YOUR COPY NOW!!
-                </Link>
-              </div>
-
-            </div>
             <Contact ref={aboutContact} id="contact" />
             <Footer />
           </div>
