@@ -87,17 +87,11 @@ const Header = ({onButtonClick, buttonClick, handleClick, handleButtonClick, han
     document.body.classList.toggle('menu-open');
   };
 
- const handleNavItemClick = (path: string) => {
-  if (path) {
-    router.push(path);
-    setIsMobileMenuOpen(false);
-  }
-};
 
 return (
-  <header className={`fixed  top-0 left-0  w-full z-50 flex md:justify-center lg:justify-center ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
- 
-    <div className=" py-[1rem] w-full px-[1rem] flex justify-between items-center md:w-full md:px-0 md:max-w-[760px] lg:w-full lg:px-0 lg:max-w-[1256px] ">
+  <header className={`fixed top-0 flex w-full xl:justify-center md:justify-center lg:justify-start left-0 w-full overflow-x-hidden z-50 ${theme === "dark" ? 'bg-black' : 'bg-white'}`}>
+ <div className="w-full max-w-[1256px]  md:px-0 md:max-w-[760px] lg:max-w-[1024px] xl:max-w-[1256px]">
+    <div className=" w-full lg:max-w-[1024px] xl:max-w-[1256px] px-[1rem] xl:px-0 flex justify-between items-center">
       {/* Logo or Brand */}
       <div className="mr-auto md:mr-0  lg:mr-0">
    <h1 className={`${vanillaText.className} text-[clamp(1.5rem,2.5vw,2.5rem)]`}>Great Anosike</h1>
@@ -267,7 +261,7 @@ return (
       {/* Mobile Menu Slide-in */}
  
     </div>
-   
+    </div>
   </header>
 );
 

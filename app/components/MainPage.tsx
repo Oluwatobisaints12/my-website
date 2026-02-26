@@ -75,7 +75,7 @@ const MainPage = ({ handleClick }: any) => {
           </CustomButton>
         </div>
 
-        <div className='mt-[1.75rem] md:mt-0 lg:mt-0' data-aos="flip-left">
+        <div className='mt-[1.75rem] md:mt-0 lg:mt-0 flex justify-center' data-aos="flip-left">
           <Image
             src={DashboardImage}
             alt="Description"

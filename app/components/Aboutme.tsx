@@ -18,7 +18,7 @@ const Aboutme = forwardRef<HTMLDivElement, { id: string }>((props, ref) => {
       }, []);
 
     return (
-        <div ref={ref} id={props.id} className='flex flex-col mt-[5rem] md:flex md:flex-row md:w-full md:justify-between md:max-w-[725px] md:items-center lg:flex lg:flex-row  lg:items-center lg:justify-between lg:max-w-[1256px] lg:w-full'>
+        <div ref={ref} id={props.id} className='w-full flex flex-col mt-[5rem] md:flex md:flex-row md:w-full md:justify-between md:max-w-[725px] md:items-center lg:flex lg:flex-row  lg:items-center lg:justify-between lg:max-w-[1256px] lg:w-full'>
         <div className='w-full order-1 md:order-2 lg:order-2 md:w-full md:max-w-[400px] lg:max-w-[692px]'  data-aos="fade-down"  >
         <h1 className={`${generalSemiBold.className} text-clamp-aboutme-text`}>About Me</h1>
             <p className={`     ${theme === "light" ? 'text-custom-dark' : 'text-custom-light'}
@@ -43,7 +43,7 @@ const Aboutme = forwardRef<HTMLDivElement, { id: string }>((props, ref) => {
                 </ul>
             </div>
         </div>
-            <div className='order-2 md:order-1 lg:order-1 mt-[2.5rem] md:mt-0 lg:order-1'  data-aos="fade-up">
+            <div className='order-2 md:order-1 flex justify-center lg:order-1 mt-[2.5rem] md:mt-0 lg:order-1'  data-aos="fade-up">
 
                 <Image
                     src={AboutmeImg}

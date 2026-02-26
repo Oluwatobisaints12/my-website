@@ -19,7 +19,7 @@ const Contact =  forwardRef<HTMLDivElement, { id: string }>((props, ref) => {
   }, []);
 
   return (
-    <div ref={ref} id={props.id} className='  lg:max-w-[1256px] lg:w-full' data-aos="zoom-in-up">
+    <div ref={ref} id={props.id} className='w-full md:max-w-[725px] lg:max-w-[1256px] lg:w-full' data-aos="zoom-in-up">
       <div className="flex flex-col mt-[5rem] md:max-w-[725px] md:mt-0 lg:max-w-[893px] lg:w-full">
         {/* Header */}
     

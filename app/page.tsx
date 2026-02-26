@@ -145,7 +145,7 @@ export default function Home() {
             <HorizontalText handleClick={handleScrollToContact} />
           </div>
 
-          <div className="px-[1rem] flex flex-col justify-center items-center md:flex md:justify-center md:items-center">
+          <div className="px-[1rem] flex flex-col w-full justify-center items-center  md:flex md:justify-center md:items-center">
             <Contact ref={aboutContact} id="contact" />
             <Footer />
           </div>
